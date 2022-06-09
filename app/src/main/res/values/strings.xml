@@ -39,12 +39,12 @@
     <string name="setting_about">About</string>
 
     <!-- Description for settings list -->
-    <string name="setting_voice_setting_description"></string>
-    <string name="setting_more_setting_description"></string>
-    <string name="setting_tutorial_description"></string>
-    <string name="setting_faq_and_user_description"></string>
-    <string name="setting_rate_and_share_description"></string>
-    <string name="setting_about_description"></string>
+    <string name="setting_voice_setting_description">description</string>
+    <string name="setting_more_setting_description">description</string>
+    <string name="setting_tutorial_description">description</string>
+    <string name="setting_faq_and_user_description">description</string>
+    <string name="setting_rate_and_share_description">description</string>
+    <string name="setting_about_description">description</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="list_fragment_label">List Fragment</string>
