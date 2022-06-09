@@ -1,0 +1,75 @@
+<!--
+  ~ Copyright (C) 2021 The Android Open Source Project.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <string name="app_name">Sen Sen</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings used for app bar -->
+    <string name="home_bar">Home</string>
+    <string name="edit_habit_bar">Edit Habit</string>
+    <string name="custom_habit_bar">Custom Habit</string>
+    <string name="overview_bar">Overview</string>
+    <string name="setting_bar">Settings</string>
+    <string name="more_setting_bar">More Settings</string>
+    <string name="voice_setting_bar">Voice Settings</string>
+    <string name="edit_voice_pack_bar">Edit Voice Pack</string>
+    <string name="custom_voice_pack_bar">Custom Voice Pack</string>
+
+    <!-- Strings used for settings list -->
+    <string name="setting_language">Language</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_voice_setting">Voice Setting</string>
+    <string name="setting_more_setting">More Setting</string>
+    <string name="setting_tutorial">Tutorial</string>
+    <string name="setting_faq_and_user_support">FAQ &amp; User Support</string>
+    <string name="setting_rate_and_share">Rate &amp; Share</string>
+    <string name="setting_about">About</string>
+
+    <!-- Description for settings list -->
+    <string name="setting_voice_setting_description"></string>
+    <string name="setting_more_setting_description"></string>
+    <string name="setting_tutorial_description"></string>
+    <string name="setting_faq_and_user_description"></string>
+    <string name="setting_rate_and_share_description"></string>
+    <string name="setting_about_description"></string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="list_fragment_label">List Fragment</string>
+    <string name="add_fragment_label">Add Fragment</string>
+
+    <string name="forageable_name">Name</string>
+    <string name="forageable_location">Location</string>
+    <string name="in_season">Currently in season</string>
+    <string name="out_of_season">Currently out of season</string>
+    <string name="notes">Notes</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="action_menu">action_menu</string>
+</resources>
