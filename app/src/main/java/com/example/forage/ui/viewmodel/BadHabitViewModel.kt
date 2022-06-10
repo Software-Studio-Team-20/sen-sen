@@ -1,16 +1,16 @@
 package com.example.forage.ui.viewmodel
 
 import androidx.lifecycle.*
-import com.example.forage.data.HabitDao
-import com.example.forage.model.HabitItem
+import com.example.forage.data.BadHabitDao
+import com.example.forage.model.BadHabitItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
-class HabitViewModel(private val habitDao: HabitDao) : ViewModel() {
-    val allHabit : LiveData<List<HabitItem>> = habitDao.getAll().asLiveData()
+class BadHabitViewModel (private val habitDao: BadHabitDao) : ViewModel() {
+    val allHabit : LiveData<List<BadHabitItem>> = habitDao.getAll().asLiveData()
 
-    fun receive (id : Long) : LiveData<HabitItem> = habitDao.gethabit(id).asLiveData()
+    fun receive (id : Long) : LiveData<BadHabitItem> = habitDao.gethabit(id).asLiveData()
 
     fun addHabit(
         name: String,
@@ -20,7 +20,7 @@ class HabitViewModel(private val habitDao: HabitDao) : ViewModel() {
         reminder: String,
         note: String
     ){
-        val habitItem = HabitItem(
+        val habitItem = BadHabitItem(
             name = name,
             goal = goal,
             frequency = frequency,
@@ -42,7 +42,7 @@ class HabitViewModel(private val habitDao: HabitDao) : ViewModel() {
         reminder: String,
         note: String
     ){
-        val habitItem = HabitItem(
+        val habitItem = BadHabitItem(
             id = id,
             name = name,
             goal = goal,
@@ -56,7 +56,7 @@ class HabitViewModel(private val habitDao: HabitDao) : ViewModel() {
         }
     }
 
-    fun deleteHabit(habitItem: HabitItem){
+    fun deleteHabit(habitItem: BadHabitItem){
         viewModelScope.launch(Dispatchers.IO) {
             habitDao.delete(habitItem)
         }
@@ -67,11 +67,11 @@ class HabitViewModel(private val habitDao: HabitDao) : ViewModel() {
     }
 }
 
-class HabitViewModelFactory(private val habitDao: HabitDao): ViewModelProvider.Factory {
+class BadHabitViewModelFactory(private val habitDao: BadHabitDao): ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if(modelClass.isAssignableFrom(HabitViewModel::class.java)) {
+        if(modelClass.isAssignableFrom(BadHabitViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return HabitViewModel(habitDao) as T
+            return BadHabitViewModel(habitDao) as T
         }
         throw IllegalArgumentException("unknown class")
     }

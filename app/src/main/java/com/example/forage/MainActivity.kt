@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
         return when (item.itemId) {
             R.id.action_menu ->{
-                navController.navigate(R.id.action_forageableListFragment_to_settingsListFragment)
+                navController.navigate(R.id.action_habitListFragment_to_settingsListFragment)
                 true
             }
             else -> super.onOptionsItemSelected(item)

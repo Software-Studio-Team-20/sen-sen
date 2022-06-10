@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "habit_database")
-data class HabitItem(
+@Entity(tableName = "bad_habit_database")
+data class BadHabitItem(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     val name: String?,

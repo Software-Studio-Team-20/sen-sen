@@ -1,10 +1,13 @@
 package com.example.forage.ui.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.forage.R
+import com.example.forage.data.HabitDatabase
 import com.example.forage.databinding.ListItemHabitBinding
 import com.example.forage.model.HabitItem
 
@@ -43,6 +46,7 @@ class HabitAdapter(
         holder.itemView.setOnClickListener {
             clickListener(habitItem)
         }
+        // if(position.equals(-1)) holder.itemView.findViewById<View>(R.id.view).visibility = View.GONE
         holder.bind(habitItem)
     }
 }

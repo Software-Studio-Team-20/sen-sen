@@ -12,9 +12,11 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/text_field"
-            android:layout_width="272dp"
-            android:layout_height="56dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="56dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -22,8 +24,8 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="9dp"
-                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:layout_marginTop="8dp"
+                android:textAppearance="?attr/textAppearanceHeadline5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Name" />
@@ -32,7 +34,7 @@
                 android:id="@+id/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceBody2"
+                android:textAppearance="?attr/textAppearanceBody1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/name"
                 tools:text="Description" />
@@ -42,8 +44,6 @@
             android:id="@+id/imageButton"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:layout_centerVertical="true"
-            android:layout_marginVertical="0dp"
             android:background="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

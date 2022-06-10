@@ -7,7 +7,7 @@
         android:id="@+id/action_menu"
         android:icon="@drawable/ic_round_menu_24"
         android:title="@string/action_menu"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
 <!--
     <item
         android:id="@+id/action_settings"

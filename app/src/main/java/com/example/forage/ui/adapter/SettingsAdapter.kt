@@ -20,6 +20,7 @@ class SettingsAdapter : RecyclerView.Adapter<SettingsAdapter.SettingsViewHolder>
         val nameView: TextView = view.findViewById(R.id.name)
         val descriptionView: TextView = view.findViewById(R.id.description)
         val button: ImageButton = view.findViewById(R.id.imageButton)
+        val divider: View = view.findViewById(R.id.view)
     }
 
     override fun getItemCount(): Int {
@@ -37,6 +38,8 @@ class SettingsAdapter : RecyclerView.Adapter<SettingsAdapter.SettingsViewHolder>
 
         holder.nameView.text = holder.nameView.context.getString(item.name)
         holder.descriptionView.text = holder.descriptionView.context.getString(item.description)
+
+        if(position.equals(dataset.size-1)) holder.divider.visibility = View.GONE
 
         holder.button.setOnClickListener{
 
