@@ -13,18 +13,19 @@ import com.example.forage.model.HabitItem
 
 class HabitAdapter(
     private val clickListener: (HabitItem) -> Unit
-) : ListAdapter<HabitItem, HabitAdapter.HabitViewHolder>(HabitAdapter) {
+) : ListAdapter<HabitItem, HabitAdapter.HabitViewHolder>(HabitDiffCallback) {
 
     class HabitViewHolder(
         private var binding: ListItemHabitBinding
-    ): RecyclerView.ViewHolder(binding.root){
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(habitItem: HabitItem) {
             binding.habit = habitItem
             binding.executePendingBindings()
+
         }
     }
 
-    companion object DiffCallback: DiffUtil.ItemCallback<HabitItem>() {
+    companion object HabitDiffCallback : DiffUtil.ItemCallback<HabitItem>() {
         override fun areItemsTheSame(oldItem: HabitItem, newItem: HabitItem): Boolean {
             return oldItem.id == newItem.id
         }
@@ -49,4 +50,6 @@ class HabitAdapter(
         // if(position.equals(-1)) holder.itemView.findViewById<View>(R.id.view).visibility = View.GONE
         holder.bind(habitItem)
     }
+
+
 }

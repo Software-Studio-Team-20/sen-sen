@@ -1,6 +1,6 @@
 package com.example.forage.model
 
 data class SettingsListItem(
-    val name: Int,
-    val description: Int
+    val nameId: Int,
+    val descriptionId: Int
 )

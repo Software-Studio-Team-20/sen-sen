@@ -1,9 +1,7 @@
 package com.example.forage.ui.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -45,7 +43,7 @@ class BadHabitListFragment : Fragment() {
             findNavController().navigate(action)
         }
 
-        viewModel.allHabit.observe(this.viewLifecycleOwner){ habitItem ->
+        viewModel.allHabit.observe(this.viewLifecycleOwner) { habitItem ->
             habitItem.let {
                 adapter.submitList(it)
             }
@@ -53,16 +51,36 @@ class BadHabitListFragment : Fragment() {
 
         binding.apply {
             habitRecyclerView.adapter = adapter
+
+            /* On click add button, navigate to addBadHabitFragment */
             addButton.setOnClickListener {
                 findNavController().navigate(
                     R.id.action_badHabitListFragment_to_addBadHabitFragment
                 )
             }
+
+            /* On click good habit bookmark, navigate to habitListFragment */
             goodBookmark.setOnClickListener {
                 findNavController().navigate(
                     R.id.action_badHabitListFragment_to_habitListFragment
                 )
             }
+
+            /* On click edit button, show radio button */
+            editButton.setOnClickListener {
+            }
+
+            /* On click char button, navigate to badOverviewFragment */
+            chartButton.setOnClickListener {
+                findNavController().navigate(
+                    R.id.action_badHabitListFragment_to_badOverviewFragment
+                )
+            }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        menu?.findItem(R.id.menu_group).isVisible = false
     }
 }

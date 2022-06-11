@@ -1,12 +1,11 @@
 package com.example.forage.data
 
-import android.content.res.Resources
 import com.example.forage.R
 import com.example.forage.model.SettingsListItem
 
 class SettingsListDataSource{
     fun loadSettings(): List<SettingsListItem> {
-        return listOf<SettingsListItem>(
+        return listOf(
             SettingsListItem(R.string.setting_voice_setting, R.string.setting_voice_setting_description),
             SettingsListItem(R.string.setting_more_setting,R.string.setting_more_setting_description),
             SettingsListItem(R.string.setting_tutorial,R.string.setting_tutorial_description),

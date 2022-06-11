@@ -3,14 +3,11 @@ package com.example.forage.ui.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.forage.R
 import com.example.forage.data.SettingsListDataSource
-import com.google.android.material.internal.ContextUtils.getActivity
-import java.security.AccessController.getContext
 
 class SettingsAdapter : RecyclerView.Adapter<SettingsAdapter.SettingsViewHolder>(){
 
@@ -36,8 +33,8 @@ class SettingsAdapter : RecyclerView.Adapter<SettingsAdapter.SettingsViewHolder>
     override fun onBindViewHolder(holder: SettingsViewHolder, position: Int) {
         val item = dataset[position]
 
-        holder.nameView.text = holder.nameView.context.getString(item.name)
-        holder.descriptionView.text = holder.descriptionView.context.getString(item.description)
+        holder.nameView.text = holder.nameView.context.getString(item.nameId)
+        holder.descriptionView.text = holder.descriptionView.context.getString(item.descriptionId)
 
         if(position.equals(dataset.size-1)) holder.divider.visibility = View.GONE
 

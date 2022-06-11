@@ -1,4 +1,5 @@
 package com.example.forage.model
 
-class TutorialItem {
-}
+data class TutorialItem(
+    val imageId: Int
+)

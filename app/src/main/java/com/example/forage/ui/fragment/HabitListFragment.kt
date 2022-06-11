@@ -1,9 +1,7 @@
 package com.example.forage.ui.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -53,16 +51,36 @@ class HabitListFragment : Fragment() {
 
         binding.apply {
             habitRecyclerView.adapter = adapter
+
+            /* On click add button, navigate to addHabitFragment */
             addButton.setOnClickListener {
                 findNavController().navigate(
                     R.id.action_habitListFragment_to_addHabitFragment
                 )
             }
+
+            /* On click bad habit bookmark, navigate to badHabitListFragment */
             badBookmark.setOnClickListener {
                 findNavController().navigate(
                     R.id.action_habitListFragment_to_badHabitListFragment
                 )
             }
+
+            /* On click edit button, show radio button */
+            editButton.setOnClickListener {
+            }
+
+            /* On click char button, navigate to overviewFragment */
+            chartButton.setOnClickListener{
+                findNavController().navigate(
+                    R.id.action_habitListFragment_to_overviewFragment
+                )
+            }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        menu?.findItem(R.id.menu_group).isVisible = false
     }
 }

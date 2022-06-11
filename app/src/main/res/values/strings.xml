@@ -23,10 +23,15 @@
     <string name="custom_habit_bar">Custom Habit</string>
     <string name="overview_bar">Overview</string>
     <string name="setting_bar">Settings</string>
+    <string name="tutorial_bar">Tutorial</string>
     <string name="more_setting_bar">More Settings</string>
     <string name="voice_setting_bar">Voice Settings</string>
     <string name="edit_voice_pack_bar">Edit Voice Pack</string>
     <string name="custom_voice_pack_bar">Custom Voice Pack</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_archive">Archive</string>
+    <string name="menu_start_over">Start Over</string>
+    <string name="menu_delete">Delete</string>
 
     <!-- Strings used for settings list -->
     <string name="setting_language">Language</string>
@@ -46,14 +51,15 @@
     <string name="setting_rate_and_share_description">description</string>
     <string name="setting_about_description">description</string>
 
+    <!-- Strings for voice setting -->
+    <string name="focus_mode_reminder_toggle">Open Foucs-Mode Reminder</string>
+    <string name="chill_mode_reminder_toggle">Open Chill-Mode Reminder</string>
+    <string name="voice_pack">Voice Packs</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="list_fragment_label">List Fragment</string>
     <string name="add_fragment_label">Add Fragment</string>
 
-    <string name="forageable_name">Name</string>
-    <string name="forageable_location">Location</string>
-    <string name="in_season">Currently in season</string>
-    <string name="out_of_season">Currently out of season</string>
     <string name="notes">Notes</string>
     <string name="save">Save</string>
     <string name="delete">Delete</string>
@@ -72,4 +78,12 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="action_menu">action_menu</string>
+
+    <!-- For edit/add voice pack -->
+    <string name="good_title">Voice for good habit</string>
+    <string name="bad_title">Voice for bad habit</string>
+    <string name="start">Start</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="Finish">Finish</string>
 </resources>

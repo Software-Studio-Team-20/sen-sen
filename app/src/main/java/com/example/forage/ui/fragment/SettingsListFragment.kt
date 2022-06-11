@@ -35,8 +35,8 @@ class SettingsListFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu, menu)
-        //val layoutButton = menu
+        super.onCreateOptionsMenu(menu, inflater)
+        menu?.findItem(R.id.action_menu).isVisible = false
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -3,12 +3,18 @@ package com.example.forage.ui.fragment
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.forage.R
-import com.example.forage.databinding.FragmentBadOverviewBinding
+import com.example.forage.databinding.FragmentTutorialBinding
+import com.example.forage.databinding.FragmentViewHabitBinding
+import com.example.forage.ui.adapter.TutorialAdapter
 
-class BadOverviewFragment: Fragment() {
-    private var _binding: FragmentBadOverviewBinding?= null
+class ViewHabitFragment : Fragment() {
+    private var _binding: FragmentViewHabitBinding?= null
     private val binding get() = _binding!!
+
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +26,7 @@ class BadOverviewFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentBadOverviewBinding.inflate(inflater, container, false)
+        _binding = FragmentViewHabitBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,10 +38,10 @@ class BadOverviewFragment: Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         menu?.findItem(R.id.action_menu).isVisible = false
-        menu?.findItem(R.id.menu_group).isVisible = false
+        menu.setGroupVisible(R.id.menu_group,true)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+
     }
 }

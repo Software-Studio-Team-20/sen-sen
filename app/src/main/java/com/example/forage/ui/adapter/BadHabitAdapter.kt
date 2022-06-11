@@ -12,7 +12,7 @@ import com.example.forage.model.HabitItem
 
 class BadHabitAdapter(
     private val clickListener: (BadHabitItem) -> Unit
-) : ListAdapter<BadHabitItem, BadHabitAdapter.BadHabitViewHolder>(BadHabitAdapter) {
+) : ListAdapter<BadHabitItem, BadHabitAdapter.BadHabitViewHolder>(BadHabitDiffCallback) {
 
     class BadHabitViewHolder(
         private var binding: ListItemBadHabitBinding
@@ -23,7 +23,7 @@ class BadHabitAdapter(
         }
     }
 
-    companion object DiffCallback: DiffUtil.ItemCallback<BadHabitItem>() {
+    companion object BadHabitDiffCallback: DiffUtil.ItemCallback<BadHabitItem>() {
         override fun areItemsTheSame(oldItem: BadHabitItem, newItem: BadHabitItem): Boolean {
             return oldItem.id == newItem.id
         }
@@ -33,14 +33,14 @@ class BadHabitAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BadHabitAdapter.BadHabitViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BadHabitViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return BadHabitAdapter.BadHabitViewHolder(
             ListItemBadHabitBinding.inflate(layoutInflater, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: BadHabitAdapter.BadHabitViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BadHabitViewHolder, position: Int) {
         val habitItem = getItem(position)
         holder.itemView.setOnClickListener {
             clickListener(habitItem)

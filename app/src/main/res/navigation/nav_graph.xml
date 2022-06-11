@@ -18,67 +18,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/badHabitListFragment">
+    app:startDestination="@id/habitListFragment">
 
-    <fragment
-        android:id="@+id/forageableListFragment"
-        android:name="com.example.forage.ui.fragment.ForageableListFragment"
-        android:label="Forage" >
-        <action
-            android:id="@+id/action_forageableListFragment_to_addForageableFragment"
-            app:destination="@id/addForageableFragment" />
-        <action
-            android:id="@+id/action_forageableListFragment_to_forageableDetailFragment"
-            app:destination="@id/forageableDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/addForageableFragment"
-        android:name="com.example.forage.ui.fragment.AddForageableFragment"
-        android:label="Forage"
-        tools:layout="@layout/fragment_add_forageable" >
-        <action
-            android:id="@+id/action_addForageableFragment_to_forageableListFragment"
-            app:destination="@id/forageableListFragment" />
-        <argument
-            android:name="id"
-            app:argType="long"
-            android:defaultValue="0L" />
-    </fragment>
-    <fragment
-        android:id="@+id/forageableDetailFragment"
-        android:name="com.example.forage.ui.fragment.ForageableDetailFragment"
-        android:label="Forage"
-        tools:layout="@layout/fragment_forageable_detail" >
-        <argument
-            android:name="id"
-            android:defaultValue="0L"
-            app:argType="long" />
-        <action
-            android:id="@+id/action_forageableDetailFragment_to_addForageableFragment"
-            app:destination="@id/addForageableFragment" />
-    </fragment>
     <fragment
         android:id="@+id/settingsListFragment"
         android:name="com.example.forage.ui.fragment.SettingsListFragment"
-        android:label="Settings"
-        tools:layout="@layout/fragment_settings_list" >
+        android:label="@string/setting_bar"
+        tools:layout="@layout/fragment_settings_list">
         <action
             android:id="@+id/action_settingsListFragment_to_voiceSettingsListFragment"
             app:destination="@id/voiceSettingsListFragment" />
         <argument
             android:name="id"
-            app:argType="long"
-            android:defaultValue="0L" />
+            android:defaultValue="0L"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_settingsListFragment_to_tutorialFragment"
+            app:destination="@id/tutorialFragment" />
     </fragment>
     <fragment
         android:id="@+id/voiceSettingsListFragment"
         android:name="com.example.forage.ui.fragment.VoiceSettingsListFragment"
-        android:label="Voice Settings"
-        tools:layout="@layout/fragment_voice_settings_list" />
+        android:label="@string/voice_setting_bar"
+        tools:layout="@layout/fragment_voice_settings_list">
+        <action
+            android:id="@+id/action_voiceSettingsListFragment_to_editVoicePackFragment"
+            app:destination="@id/editVoicePackFragment" />
+    </fragment>
     <fragment
         android:id="@+id/habitListFragment"
         android:name="com.example.forage.ui.fragment.HabitListFragment"
-        android:label="Home"
+        android:label="@string/home_bar"
         tools:layout="@layout/fragment_habit_list">
         <action
             android:id="@+id/action_habitListFragment_to_addHabitFragment"
@@ -89,12 +59,18 @@
         <action
             android:id="@+id/action_habitListFragment_to_badHabitListFragment"
             app:destination="@id/badHabitListFragment" />
+        <action
+            android:id="@+id/action_habitListFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
+        <action
+            android:id="@+id/action_habitListFragment_to_editHabitFragment"
+            app:destination="@id/editHabitFragment" />
     </fragment>
     <fragment
         android:id="@+id/addHabitFragment"
         android:name="com.example.forage.ui.fragment.AddHabitFragment"
-        android:label="fragment_add_habit"
-        tools:layout="@layout/fragment_add_habit" >
+        android:label="@string/custom_habit_bar"
+        tools:layout="@layout/fragment_add_habit">
         <argument
             android:name="id"
             android:defaultValue="0L"
@@ -103,8 +79,8 @@
     <fragment
         android:id="@+id/badHabitListFragment"
         android:name="com.example.forage.ui.fragment.BadHabitListFragment"
-        android:label="fragment_bad_habit_list"
-        tools:layout="@layout/fragment_bad_habit_list" >
+        android:label="@string/home_bar"
+        tools:layout="@layout/fragment_bad_habit_list">
         <action
             android:id="@+id/action_badHabitListFragment_to_addBadHabitFragment"
             app:destination="@id/addBadHabitFragment" />
@@ -114,16 +90,52 @@
         <action
             android:id="@+id/action_badHabitListFragment_to_habitListFragment"
             app:destination="@id/habitListFragment" />
+        <action
+            android:id="@+id/action_badHabitListFragment_to_badOverviewFragment"
+            app:destination="@id/badOverviewFragment" />
+        <action
+            android:id="@+id/action_badHabitListFragment_to_editBadHabitFragment"
+            app:destination="@id/editBadHabitFragment" />
     </fragment>
     <fragment
         android:id="@+id/addBadHabitFragment"
         android:name="com.example.forage.ui.fragment.AddBadHabitFragment"
-        android:label="fragment_add_bad_habit"
-        tools:layout="@layout/fragment_add_bad_habit" >
+        android:label="@string/custom_habit_bar"
+        tools:layout="@layout/fragment_add_bad_habit">
         <argument
             android:name="id"
             android:defaultValue="0L"
             app:argType="long" />
     </fragment>
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="com.example.forage.ui.fragment.OverviewFragment"
+        android:label="@string/overview_bar"
+        tools:layout="@layout/fragment_overview" />
+    <fragment
+        android:id="@+id/badOverviewFragment"
+        android:name="com.example.forage.ui.fragment.BadOverviewFragment"
+        android:label="@string/overview_bar"
+        tools:layout="@layout/fragment_bad_overview" />
+    <fragment
+        android:id="@+id/editBadHabitFragment"
+        android:name="com.example.forage.ui.fragment.EditBadHabitFragment"
+        android:label="@string/edit_habit_bar"
+        tools:layout="@layout/fragment_edit_bad_habit" />
+    <fragment
+        android:id="@+id/editHabitFragment"
+        android:name="com.example.forage.ui.fragment.EditHabitFragment"
+        android:label="@string/edit_habit_bar"
+        tools:layout="@layout/fragment_edit_habit" />
+    <fragment
+        android:id="@+id/editVoicePackFragment"
+        android:name="com.example.forage.ui.fragment.EditVoicePackFragment"
+        android:label="@string/edit_voice_pack_bar"
+        tools:layout="@layout/fragment_edit_voice_pack" />
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="com.example.forage.ui.fragment.TutorialFragment"
+        android:label="@string/tutorial_bar"
+        tools:layout="@layout/fragment_tutorial" />
 
 </navigation>
