@@ -39,7 +39,7 @@ class HabitListFragment : Fragment() {
 
         val adapter = HabitAdapter { habitItem ->
             val action = HabitListFragmentDirections
-                .actionHabitListFragmentToAddHabitFragment(habitItem.id)
+                .actionHabitListFragmentToAddHabitFragment()
             findNavController().navigate(action)
         }
 
@@ -68,6 +68,9 @@ class HabitListFragment : Fragment() {
 
             /* On click edit button, show radio button */
             editButton.setOnClickListener {
+                findNavController().navigate(
+                    R.id.action_habitListFragment_to_editHabitFragment
+                )
             }
 
             /* On click char button, navigate to overviewFragment */

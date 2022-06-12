@@ -39,7 +39,7 @@ class BadHabitListFragment : Fragment() {
 
         val adapter = BadHabitAdapter { habitItem ->
             val action = BadHabitListFragmentDirections
-                .actionBadHabitListFragmentToAddBadHabitFragment(habitItem.id)
+                .actionBadHabitListFragmentToAddBadHabitFragment()
             findNavController().navigate(action)
         }
 
@@ -68,6 +68,9 @@ class BadHabitListFragment : Fragment() {
 
             /* On click edit button, show radio button */
             editButton.setOnClickListener {
+                findNavController().navigate(
+                    R.id.action_badHabitListFragment_to_addBadHabitFragment
+                )
             }
 
             /* On click char button, navigate to badOverviewFragment */

@@ -63,6 +63,6 @@ class VoiceSettingsListFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         menu?.findItem(R.id.action_menu).isVisible = false
-        menu?.findItem(R.id.menu_group).isVisible = false
+        menu.setGroupVisible(R.id.menu_group, false)
     }
 }

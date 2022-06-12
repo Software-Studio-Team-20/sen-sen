@@ -71,10 +71,6 @@
         android:name="com.example.forage.ui.fragment.AddHabitFragment"
         android:label="@string/custom_habit_bar"
         tools:layout="@layout/fragment_add_habit">
-        <argument
-            android:name="id"
-            android:defaultValue="0L"
-            app:argType="long" />
     </fragment>
     <fragment
         android:id="@+id/badHabitListFragment"
@@ -102,10 +98,6 @@
         android:name="com.example.forage.ui.fragment.AddBadHabitFragment"
         android:label="@string/custom_habit_bar"
         tools:layout="@layout/fragment_add_bad_habit">
-        <argument
-            android:name="id"
-            android:defaultValue="0L"
-            app:argType="long" />
     </fragment>
     <fragment
         android:id="@+id/overviewFragment"
