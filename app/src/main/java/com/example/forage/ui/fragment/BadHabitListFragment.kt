@@ -1,5 +1,7 @@
 package com.example.forage.ui.fragment
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.*
@@ -11,7 +13,6 @@ import com.example.forage.BaseApplication
 import com.example.forage.R
 import com.example.forage.databinding.FragmentBadHabitListBinding
 import com.example.forage.model.BadHabitItem
-import com.example.forage.model.HabitItem
 import com.example.forage.ui.adapter.BadHabitAdapter
 import com.example.forage.ui.viewmodel.BadHabitViewModel
 import com.example.forage.ui.viewmodel.BadHabitViewModelFactory
@@ -44,7 +45,21 @@ class BadHabitListFragment : Fragment() {
         val adapter = BadHabitAdapter { habitItem ->
             val action = BadHabitListFragmentDirections
                 .actionBadHabitListFragmentToAddBadHabitFragment()
-            findNavController().navigate(action)
+            val dialogBuilder = AlertDialog.Builder(requireActivity())
+            dialogBuilder.setMessage("Want to delet ${habitItem.name} ?")
+                // if the dialog is cancelable
+                .setCancelable(false)
+                .setNegativeButton("No, let me think!", DialogInterface.OnClickListener {
+                        dialog, id -> dialog.dismiss()
+                })
+                .setPositiveButton("Delete it!", DialogInterface.OnClickListener {
+                        dialog, id -> viewModel.deleteBadHabit(habitItem)
+                })
+
+            val alert = dialogBuilder.create()
+            alert.setTitle("Delete")
+            alert.show()
+//            findNavController().navigate(action)
         }
 
         viewModel.allHabit.observe(this.viewLifecycleOwner) { habitItem ->
