@@ -46,13 +46,13 @@ class BadHabitListFragment : Fragment() {
             val action = BadHabitListFragmentDirections
                 .actionBadHabitListFragmentToAddBadHabitFragment()
             val dialogBuilder = AlertDialog.Builder(requireActivity())
-            dialogBuilder.setMessage("Want to delet ${habitItem.name} ?")
+            dialogBuilder.setMessage("Are you sure to delete ${habitItem.name} ?")
                 // if the dialog is cancelable
                 .setCancelable(false)
-                .setNegativeButton("No, let me think!", DialogInterface.OnClickListener {
+                .setNegativeButton("No.", DialogInterface.OnClickListener {
                         dialog, id -> dialog.dismiss()
                 })
-                .setPositiveButton("Delete it!", DialogInterface.OnClickListener {
+                .setPositiveButton("Yes!", DialogInterface.OnClickListener {
                         dialog, id -> viewModel.deleteBadHabit(habitItem)
                 })
 
