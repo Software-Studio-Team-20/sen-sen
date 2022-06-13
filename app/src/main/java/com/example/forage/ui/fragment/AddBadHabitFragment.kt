@@ -22,8 +22,6 @@ class AddBadHabitFragment: Fragment() {
     private val navigationArgs: AddBadHabitFragmentArgs by navArgs()
     private lateinit var badHabitItem: BadHabitItem
 
-    var mediaPlayer = MediaPlayer.create(context, R.raw.bad_new)
-
     private val viewModel: BadHabitViewModel by activityViewModels(){
         BadHabitViewModelFactory(
             (activity?.application as BaseApplication).badHabitDatabase.badHabitDao()
@@ -66,6 +64,7 @@ class AddBadHabitFragment: Fragment() {
         } else {
             binding.saveBtn.setOnClickListener {
                 addBadHabit()
+                var mediaPlayer = MediaPlayer.create(context, R.raw.bad_new)
                 mediaPlayer.start()
             }
         }

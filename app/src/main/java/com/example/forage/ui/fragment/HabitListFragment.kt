@@ -1,5 +1,7 @@
 package com.example.forage.ui.fragment
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.*
@@ -28,8 +30,6 @@ class HabitListFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    var mediaPlayer = MediaPlayer.create(context, R.raw.good_delete)
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,7 +45,21 @@ class HabitListFragment : Fragment() {
         val adapter = HabitAdapter { habitItem ->
             val action = HabitListFragmentDirections
                 .actionHabitListFragmentToAddHabitFragment()
-            findNavController().navigate(action)
+            val dialogBuilder = AlertDialog.Builder(requireActivity())
+            dialogBuilder.setMessage("Want to delet ${habitItem.name} ?")
+                // if the dialog is cancelable
+                .setCancelable(false)
+                .setNegativeButton("No, let me think!", DialogInterface.OnClickListener {
+                        dialog, id -> dialog.dismiss()
+                })
+                .setPositiveButton("Delete it!", DialogInterface.OnClickListener {
+                        dialog, id -> viewModel.deleteHabit(habitItem)
+                })
+
+            val alert = dialogBuilder.create()
+            alert.setTitle("Delete")
+            alert.show()
+//            findNavController().navigate(action)
         }
 
         viewModel.allHabit.observe(this.viewLifecycleOwner){ habitItem ->
@@ -74,6 +88,7 @@ class HabitListFragment : Fragment() {
             /* On click edit button, show radio button */
             editButton.setOnClickListener {
                 deleteHabit()
+                var mediaPlayer = MediaPlayer.create(context, R.raw.good_delete)
                 mediaPlayer.start()
             }
 

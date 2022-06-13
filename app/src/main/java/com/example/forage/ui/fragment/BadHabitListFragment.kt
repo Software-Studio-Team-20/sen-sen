@@ -29,8 +29,6 @@ class BadHabitListFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    var mediaPlayer = MediaPlayer.create(context, R.raw.bad_delete)
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -75,6 +73,7 @@ class BadHabitListFragment : Fragment() {
             /* On click edit button, show radio button */
             editButton.setOnClickListener {
                 deleteHabit()
+                var mediaPlayer = MediaPlayer.create(context, R.raw.bad_delete)
                 mediaPlayer.start()
             }
 
