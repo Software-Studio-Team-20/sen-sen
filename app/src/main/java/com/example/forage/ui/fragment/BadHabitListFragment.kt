@@ -69,7 +69,7 @@ class BadHabitListFragment : Fragment() {
             /* On click edit button, show radio button */
             editButton.setOnClickListener {
                 findNavController().navigate(
-                    R.id.action_badHabitListFragment_to_addBadHabitFragment
+                    R.id.action_badHabitListFragment_to_editBadHabitFragment
                 )
             }
 
