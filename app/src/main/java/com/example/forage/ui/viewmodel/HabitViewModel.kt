@@ -1,6 +1,7 @@
 package com.example.forage.ui.viewmodel
 
 import androidx.lifecycle.*
+import com.example.forage.data.BadHabitDao
 import com.example.forage.data.HabitDao
 import com.example.forage.model.HabitItem
 import kotlinx.coroutines.Dispatchers

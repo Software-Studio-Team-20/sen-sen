@@ -17,8 +17,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Forage" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/orange</item>
-        <item name="colorPrimaryVariant">@color/light_orange</item>
+        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimaryVariant">@color/dark_grey</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/light_blue</item>
@@ -35,6 +35,5 @@
     </style>
 
     <style name="Theme.Forage.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.Forage.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

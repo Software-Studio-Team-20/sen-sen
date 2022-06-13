@@ -7,12 +7,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
-class BadHabitViewModel (private val habitDao: BadHabitDao) : ViewModel() {
-    val allHabit : LiveData<List<BadHabitItem>> = habitDao.getAll().asLiveData()
+class BadHabitViewModel (private val badHabitDao: BadHabitDao) : ViewModel() {
+    val allHabit : LiveData<List<BadHabitItem>> = badHabitDao.getAll().asLiveData()
 
-    fun receive (id : Long) : LiveData<BadHabitItem> = habitDao.gethabit(id).asLiveData()
+    fun receive (id : Long) : LiveData<BadHabitItem> = badHabitDao.gethabit(id).asLiveData()
 
-    fun addHabit(
+    fun addBadHabit(
         name: String,
         goal: String,
         frequency: String,
@@ -20,7 +20,7 @@ class BadHabitViewModel (private val habitDao: BadHabitDao) : ViewModel() {
         reminder: String,
         note: String
     ){
-        val habitItem = BadHabitItem(
+        val badHabitItem = BadHabitItem(
             name = name,
             goal = goal,
             frequency = frequency,
@@ -29,11 +29,11 @@ class BadHabitViewModel (private val habitDao: BadHabitDao) : ViewModel() {
             note = note
         )
         viewModelScope.launch {
-            habitDao.insert(habitItem)
+            badHabitDao.insert(badHabitItem)
         }
     }
 
-    fun updateHabit(
+    fun updateBadHabit(
         id: Long,
         name: String,
         goal: String,
@@ -42,7 +42,7 @@ class BadHabitViewModel (private val habitDao: BadHabitDao) : ViewModel() {
         reminder: String,
         note: String
     ){
-        val habitItem = BadHabitItem(
+        val badHabitItem = BadHabitItem(
             id = id,
             name = name,
             goal = goal,
@@ -52,13 +52,13 @@ class BadHabitViewModel (private val habitDao: BadHabitDao) : ViewModel() {
             note = note
         )
         viewModelScope.launch(Dispatchers.IO){
-            habitDao.update(habitItem)
+            badHabitDao.update(badHabitItem)
         }
     }
 
-    fun deleteHabit(habitItem: BadHabitItem){
+    fun deleteBadHabit(badHabitItem: BadHabitItem){
         viewModelScope.launch(Dispatchers.IO) {
-            habitDao.delete(habitItem)
+            badHabitDao.delete(badHabitItem)
         }
     }
 
@@ -67,11 +67,11 @@ class BadHabitViewModel (private val habitDao: BadHabitDao) : ViewModel() {
     }
 }
 
-class BadHabitViewModelFactory(private val habitDao: BadHabitDao): ViewModelProvider.Factory {
+class BadHabitViewModelFactory(private val badHabitDao: BadHabitDao): ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if(modelClass.isAssignableFrom(BadHabitViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return BadHabitViewModel(habitDao) as T
+            return BadHabitViewModel(badHabitDao) as T
         }
         throw IllegalArgumentException("unknown class")
     }

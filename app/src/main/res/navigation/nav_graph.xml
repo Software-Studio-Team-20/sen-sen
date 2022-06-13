@@ -69,8 +69,15 @@
     <fragment
         android:id="@+id/addHabitFragment"
         android:name="com.example.forage.ui.fragment.AddHabitFragment"
-        android:label="@string/custom_habit_bar"
-        tools:layout="@layout/fragment_add_habit">
+        android:label="@string/add_edit"
+        tools:layout="@layout/fragment_add_habit" >
+        <action
+            android:id="@+id/action_addHabitFragment_to_habitListFragment"
+            app:destination="@+id/habitListFragment" />
+        <argument
+            android:name="id"
+            android:defaultValue="0L"
+            app:argType="long" />
     </fragment>
     <fragment
         android:id="@+id/badHabitListFragment"
@@ -96,8 +103,15 @@
     <fragment
         android:id="@+id/addBadHabitFragment"
         android:name="com.example.forage.ui.fragment.AddBadHabitFragment"
-        android:label="@string/custom_habit_bar"
-        tools:layout="@layout/fragment_add_bad_habit">
+        android:label="@string/add_edit"
+        tools:layout="@layout/fragment_add_bad_habit" >
+        <action
+            android:id="@+id/action_addBadHabitFragment_to_badHabitListFragment"
+            app:destination="@+id/badHabitListFragment" />
+        <argument
+            android:name="id"
+            android:defaultValue="0L"
+            app:argType="long" />
     </fragment>
     <fragment
         android:id="@+id/overviewFragment"

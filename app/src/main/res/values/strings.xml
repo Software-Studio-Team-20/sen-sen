@@ -33,6 +33,15 @@
     <string name="menu_start_over">Start Over</string>
     <string name="menu_delete">Delete</string>
 
+    <!--  Strings used for add habit  -->
+    <string name="add_name">Name</string>
+    <string name="add_goals">Goals</string>
+    <string name="add_frequency">Frequency</string>
+    <string name="add_time_range">Time Range</string>
+    <string name="add_reminder">Reminder</string>
+    <string name="add_note">Note</string>
+    <string name="add_edit">Edit Habit</string>
+
     <!-- Strings used for settings list -->
     <string name="setting_language">Language</string>
     <string name="setting_theme">Theme</string>
