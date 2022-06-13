@@ -37,7 +37,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="@color/light_orange"
-            android:src="@drawable/ic_round_edit_24"
+            android:src="@drawable/ic_round_delete_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/add_button"

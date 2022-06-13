@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LiveData
 import androidx.navigation.fragment.findNavController
 import com.example.forage.BaseApplication
 import com.example.forage.R
 import com.example.forage.databinding.FragmentHabitListBinding
+import com.example.forage.model.HabitItem
 import com.example.forage.ui.adapter.HabitAdapter
 import com.example.forage.ui.viewmodel.HabitViewModel
 import com.example.forage.ui.viewmodel.HabitViewModelFactory
@@ -68,9 +70,7 @@ class HabitListFragment : Fragment() {
 
             /* On click edit button, show radio button */
             editButton.setOnClickListener {
-                findNavController().navigate(
-                    R.id.action_habitListFragment_to_editHabitFragment
-                )
+                deleteHabit()
             }
 
             /* On click char button, navigate to overviewFragment */
@@ -85,5 +85,13 @@ class HabitListFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         menu?.findItem(R.id.menu_group).isVisible = false
+    }
+
+    private fun deleteHabit() {
+        val allHabit : LiveData<List<HabitItem>> = viewModel.getHabit()
+        val habit : List<HabitItem> = allHabit.getValue()!!
+        for (i in habit.indices) {
+            viewModel.deleteHabit(habit[i])
+        }
     }
 }

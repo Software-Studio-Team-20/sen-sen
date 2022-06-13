@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LiveData
 import androidx.navigation.fragment.findNavController
 import com.example.forage.BaseApplication
 import com.example.forage.R
 import com.example.forage.databinding.FragmentBadHabitListBinding
+import com.example.forage.model.BadHabitItem
+import com.example.forage.model.HabitItem
 import com.example.forage.ui.adapter.BadHabitAdapter
 import com.example.forage.ui.viewmodel.BadHabitViewModel
 import com.example.forage.ui.viewmodel.BadHabitViewModelFactory
@@ -68,9 +71,7 @@ class BadHabitListFragment : Fragment() {
 
             /* On click edit button, show radio button */
             editButton.setOnClickListener {
-                findNavController().navigate(
-                    R.id.action_badHabitListFragment_to_editBadHabitFragment
-                )
+                deleteHabit()
             }
 
             /* On click char button, navigate to badOverviewFragment */
@@ -85,5 +86,13 @@ class BadHabitListFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         menu?.findItem(R.id.menu_group).isVisible = false
+    }
+
+    private fun deleteHabit() {
+        val allHabit : LiveData<List<BadHabitItem>> = viewModel.getHabit()
+        val habit : List<BadHabitItem> = allHabit.getValue()!!
+        for (i in habit.indices) {
+            viewModel.deleteBadHabit(habit[i])
+        }
     }
 }

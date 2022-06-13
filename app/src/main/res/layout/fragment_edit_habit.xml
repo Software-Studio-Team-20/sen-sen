@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/light_grey"
     android:foregroundGravity="center"
-    tools:context=".ui.fragment.HabitListFragment">
+    tools:context=".ui.fragment.EditHabitFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/action_bar"

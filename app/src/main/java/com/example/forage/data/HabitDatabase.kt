@@ -23,7 +23,6 @@ abstract class HabitDatabase :RoomDatabase() {
                 INSTANCE = instance
                 return instance
             }
-
         }
     }
 }

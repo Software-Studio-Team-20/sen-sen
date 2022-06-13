@@ -1,7 +1,6 @@
 package com.example.forage.ui.viewmodel
 
 import androidx.lifecycle.*
-import com.example.forage.data.BadHabitDao
 import com.example.forage.data.HabitDao
 import com.example.forage.model.HabitItem
 import kotlinx.coroutines.Dispatchers
@@ -12,6 +11,10 @@ class HabitViewModel(private val habitDao: HabitDao) : ViewModel() {
     val allHabit : LiveData<List<HabitItem>> = habitDao.getAll().asLiveData()
 
     fun receive (id : Long) : LiveData<HabitItem> = habitDao.gethabit(id).asLiveData()
+
+    fun getHabit() : LiveData<List<HabitItem>> {
+        return allHabit
+    }
 
     fun addHabit(
         name: String,
