@@ -84,14 +84,14 @@
                 android:id="@+id/good_bookmark"
                 android:layout_width="190dp"
                 android:layout_height="60dp"
-                android:background="@color/white"
+                android:background="@drawable/white_sun"
                 android:foregroundGravity="center" />
 
             <View
                 android:id="@+id/bad_bookmark"
                 android:layout_width="190dp"
                 android:layout_height="60dp"
-                android:background="@color/grey"
+                android:background="@drawable/grey_moon"
                 android:foregroundGravity="center" />
         </LinearLayout>
 
