@@ -1,5 +1,6 @@
 package com.example.forage.ui.fragment
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.*
 import android.widget.TextView
@@ -20,6 +21,8 @@ class AddHabitFragment: Fragment() {
 
     private val navigationArgs: AddHabitFragmentArgs by navArgs()
     private lateinit var habitItem: HabitItem
+
+    var mediaPlayer = MediaPlayer.create(context, R.raw.good_new)
 
     private val viewModel: HabitViewModel by activityViewModels(){
         HabitViewModelFactory(
@@ -63,6 +66,7 @@ class AddHabitFragment: Fragment() {
         } else {
             binding.saveBtn.setOnClickListener {
                 addHabit()
+                mediaPlayer.start()
             }
         }
     }

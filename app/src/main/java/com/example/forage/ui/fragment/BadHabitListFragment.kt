@@ -1,5 +1,6 @@
 package com.example.forage.ui.fragment
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -27,6 +28,8 @@ class BadHabitListFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    var mediaPlayer = MediaPlayer.create(context, R.raw.bad_delete)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -72,6 +75,7 @@ class BadHabitListFragment : Fragment() {
             /* On click edit button, show radio button */
             editButton.setOnClickListener {
                 deleteHabit()
+                mediaPlayer.start()
             }
 
             /* On click char button, navigate to badOverviewFragment */
