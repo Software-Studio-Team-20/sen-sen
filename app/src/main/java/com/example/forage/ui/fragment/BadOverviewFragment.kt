@@ -131,7 +131,7 @@ class BadOverviewFragment: Fragment() {
     // simulate api call
     // we are initialising it directly
     private fun getBadHabitList(): ArrayList<Bad_Habit_Data> {
-        val allHabit : LiveData<List<BadHabitItem>> = viewModel.getHabit()
+        val allHabit : LiveData<List<BadHabitItem>> = viewModel.getBadHabit()
         val habit : List<BadHabitItem> = allHabit.getValue()!!
         for (i in habit.indices) {
             habitList.add(Bad_Habit_Data(habit[i].name.toString(), habit[i].frequency.toInt()))

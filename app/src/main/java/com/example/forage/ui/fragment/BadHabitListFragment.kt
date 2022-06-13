@@ -62,7 +62,7 @@ class BadHabitListFragment : Fragment() {
 //            findNavController().navigate(action)
         }
 
-        viewModel.allHabit.observe(this.viewLifecycleOwner) { habitItem ->
+        viewModel.allBadHabit.observe(this.viewLifecycleOwner) { habitItem ->
             habitItem.let {
                 adapter.submitList(it)
             }
@@ -87,7 +87,7 @@ class BadHabitListFragment : Fragment() {
 
             /* On click edit button, show radio button */
             editButton.setOnClickListener {
-                deleteHabit()
+                deleteBadHabit()
                 var mediaPlayer = MediaPlayer.create(context, R.raw.bad_delete)
                 mediaPlayer.start()
             }
@@ -106,8 +106,8 @@ class BadHabitListFragment : Fragment() {
         menu?.findItem(R.id.menu_group).isVisible = false
     }
 
-    private fun deleteHabit() {
-        val allHabit : LiveData<List<BadHabitItem>> = viewModel.getHabit()
+    private fun deleteBadHabit() {
+        val allHabit : LiveData<List<BadHabitItem>> = viewModel.getBadHabit()
         val habit : List<BadHabitItem> = allHabit.getValue()!!
         for (i in habit.indices) {
             viewModel.deleteBadHabit(habit[i])
