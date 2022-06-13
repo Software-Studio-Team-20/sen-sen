@@ -43,7 +43,7 @@ class EditBadHabitFragment : Fragment() {
             findNavController().navigate(action)
         }
 
-        viewModel.allHabit.observe(this.viewLifecycleOwner) { habitItem ->
+        viewModel.allBadHabit.observe(this.viewLifecycleOwner) { habitItem ->
             habitItem.let {
                 adapter.submitList(it)
             }
