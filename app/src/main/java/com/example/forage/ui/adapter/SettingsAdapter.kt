@@ -8,8 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.forage.R
 import com.example.forage.data.SettingsListDataSource
+import com.example.forage.model.SettingsListItem
+import com.example.forage.model.VoiceDataItem
 
-class SettingsAdapter : RecyclerView.Adapter<SettingsAdapter.SettingsViewHolder>(){
+class SettingsAdapter(
+    private val clickListener: (SettingsListItem) -> Unit
+) : RecyclerView.Adapter<SettingsAdapter.SettingsViewHolder>(){
 
     private val dataset = SettingsListDataSource().loadSettings()
 
@@ -38,8 +42,9 @@ class SettingsAdapter : RecyclerView.Adapter<SettingsAdapter.SettingsViewHolder>
 
         if(position.equals(dataset.size-1)) holder.divider.visibility = View.GONE
 
-        holder.button.setOnClickListener{
 
+        holder.button.setOnClickListener{
+            clickListener(item)
         }
     }
 }

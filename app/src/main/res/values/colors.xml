@@ -24,4 +24,5 @@
     <color name="dark_grey">#49454F</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="document_stroke">#C4C4C4</color>
 </resources>

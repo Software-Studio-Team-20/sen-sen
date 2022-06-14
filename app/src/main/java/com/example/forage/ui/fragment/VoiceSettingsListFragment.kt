@@ -57,6 +57,9 @@ class VoiceSettingsListFragment : Fragment() {
 
         binding.apply {
             voiceSettingsRecyclerView.adapter = adapter
+            findNavController().navigate(
+                R.id.action_voiceSettingsListFragment_to_editVoicePackFragment
+            )
         }
     }
 

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.forage.R
 import com.example.forage.databinding.FragmentSettingsListBinding
 import com.example.forage.ui.adapter.SettingsAdapter
+import com.example.forage.ui.adapter.VoiceDataAdapter
 
 class SettingsListFragment : Fragment() {
     private var _binding: FragmentSettingsListBinding ?= null
@@ -44,14 +45,15 @@ class SettingsListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView = binding.settingsRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = SettingsAdapter()
 
+        val adapter = SettingsAdapter { item ->
+            val action = SettingsListFragmentDirections.actionSettingsListFragmentToVoiceSettingsListFragment()
+            findNavController().navigate(action)
+        }
+
+        recyclerView.adapter = adapter
         binding.apply {
-            settingsRecyclerView.setOnClickListener {
-                findNavController().navigate(
-                    R.id.action_settingsListFragment_to_voiceSettingsListFragment
-                )
-            }
+
         }
     }
 }
