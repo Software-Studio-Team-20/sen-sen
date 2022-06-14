@@ -61,7 +61,7 @@
     <string name="setting_about_description">description</string>
 
     <!-- Strings for voice setting -->
-    <string name="focus_mode_reminder_toggle">Open Foucs-Mode Reminder</string>
+    <string name="focus_mode_reminder_toggle">Open Focus-Mode Reminder</string>
     <string name="chill_mode_reminder_toggle">Open Chill-Mode Reminder</string>
     <string name="voice_pack">Voice Packs</string>
 

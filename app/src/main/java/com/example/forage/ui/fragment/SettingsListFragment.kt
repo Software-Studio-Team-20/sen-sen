@@ -47,7 +47,7 @@ class SettingsListFragment : Fragment() {
         recyclerView.adapter = SettingsAdapter()
 
         binding.apply {
-            settingsRecyclerView.setOnClickListener {
+            test.setOnClickListener {
                 findNavController().navigate(
                     R.id.action_settingsListFragment_to_voiceSettingsListFragment
                 )
