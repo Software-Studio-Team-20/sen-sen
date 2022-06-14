@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="@string/focus_mode_reminder_toggle"
-            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="@string/chill_mode_reminder_toggle"
-            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/voice_settings_switch_1" />
@@ -58,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/voice_pack"
-                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -77,14 +77,37 @@
             android:scrollbars="vertical"
             app:layoutManager="LinearLayoutManager" />
 
-        <Button
-            android:id="@+id/button"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/add_voice_pack_button"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="Button"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             app:layout_constraintTop_toBottomOf="@id/voice_settings_recycler_view"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintStart_toStartOf="@id/voice_settings_recycler_view">
+
+            <ImageView
+                android:id="@+id/addImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_round_add_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/black"/>
+
+            <TextView
+                android:id="@+id/Voice_Pack_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/add_voice_pack"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/addImageView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

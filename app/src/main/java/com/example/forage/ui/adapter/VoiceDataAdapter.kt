@@ -47,10 +47,10 @@ class VoiceDataAdapter(
 
     override fun onBindViewHolder(holder: VoiceDataViewHolder, position: Int) {
         val item = getItem(position)
-        /*holder.itemView.setOnClickListener {
-            //clickListener(item)
-        }*/
-        // if(position.equals(-1)) holder.itemView.findViewById<View>(R.id.view).visibility = View.GONE
+        holder.itemView.setOnClickListener {
+            clickListener(item)
+        }
+
         holder.bind(item)
     }
 }

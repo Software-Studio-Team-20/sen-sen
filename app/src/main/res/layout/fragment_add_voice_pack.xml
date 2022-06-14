@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.EditVoicePackFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/voice_settings_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="16dp" />
+</FrameLayout>
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.AddVoicePackFragment">
+
+    <FrameLayout
+        android:id="@+id/settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-12dp">
+
+            <ImageButton
+                android:id="@+id/good_start_2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="36dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_edit_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_start_1"
+                app:layout_constraintTop_toBottomOf="@id/good_habit_title" />
+
+            <ImageButton
+                android:id="@+id/good_start_3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="36dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_file_upload_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_start_2"
+                app:layout_constraintTop_toBottomOf="@id/good_habit_title" />
+
+            <ImageButton
+                android:id="@+id/bad_start_3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="36dp"
+
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_file_upload_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_start_2"
+                app:layout_constraintTop_toBottomOf="@id/bad_habit_title" />
+
+            <ImageButton
+                android:id="@+id/bad_start_2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="36dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_edit_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_start_1"
+                app:layout_constraintTop_toBottomOf="@id/bad_habit_title" />
+
+            <ImageButton
+                android:id="@+id/bad_finish_3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_file_upload_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_finish_2"
+                app:layout_constraintTop_toBottomOf="@id/bad_resume_3" />
+
+            <ImageButton
+                android:id="@+id/bad_finish_2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_edit_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_finish_1"
+                app:layout_constraintTop_toBottomOf="@id/bad_resume_2" />
+
+            <ImageButton
+                android:id="@+id/bad_finish_1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_delete_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_finish_doc"
+                app:layout_constraintTop_toBottomOf="@id/bad_resume_1" />
+
+            <ImageButton
+                android:id="@+id/bad_pause_2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_edit_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_pause_1"
+                app:layout_constraintTop_toBottomOf="@id/bad_start_2" />
+
+            <ImageButton
+                android:id="@+id/bad_pause_3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_file_upload_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_pause_2"
+                app:layout_constraintTop_toBottomOf="@id/bad_start_3" />
+
+            <ImageButton
+                android:id="@+id/bad_pause_1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_delete_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_resume_doc"
+                app:layout_constraintTop_toBottomOf="@id/bad_start_1" />
+
+            <ImageButton
+                android:id="@+id/good_finish_3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_file_upload_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_finish_2"
+                app:layout_constraintTop_toBottomOf="@id/good_pause_3" />
+
+            <ImageButton
+                android:id="@+id/good_finish_1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_delete_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_finish_doc"
+                app:layout_constraintTop_toBottomOf="@id/good_pause_1" />
+
+            <ImageButton
+                android:id="@+id/good_finish_2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_edit_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_finish_1"
+                app:layout_constraintTop_toBottomOf="@id/good_pause_2" />
+
+            <ImageButton
+                android:id="@+id/good_resume_1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_delete_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_resume_doc"
+                app:layout_constraintTop_toBottomOf="@id/good_start_1" />
+
+            <ImageButton
+                android:id="@+id/good_resume_3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_file_upload_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_resume_2"
+                app:layout_constraintTop_toBottomOf="@id/good_start_3" />
+
+            <ImageButton
+                android:id="@+id/good_resume_2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_edit_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_resume_1"
+                app:layout_constraintTop_toBottomOf="@id/good_start_2" />
+
+            <ImageButton
+                android:id="@+id/good_pause_3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_file_upload_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_pause_2"
+                app:layout_constraintTop_toBottomOf="@id/good_resume_3" />
+
+            <ImageButton
+                android:id="@+id/good_pause_2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_edit_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_pause_1"
+                app:layout_constraintTop_toBottomOf="@id/good_resume_2" />
+
+            <ImageButton
+                android:id="@+id/good_pause_1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_delete_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_pause_doc"
+                app:layout_constraintTop_toBottomOf="@id/good_resume_1" />
+
+            <TextView
+                android:id="@+id/good_habit_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="28dp"
+                android:text="Voice for good habit"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/bad_habit_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="28dp"
+                android:text="Voice for bad habit"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+            <TextView
+                android:id="@+id/good_start_name"
+                android:layout_width="104dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:text="Start"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/good_habit_title" />
+
+            <ImageButton
+                android:id="@+id/bad_start_1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_delete_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_start_doc"
+                app:layout_constraintTop_toBottomOf="@id/bad_habit_title" />
+
+            <TextView
+                android:id="@+id/good_pause_doc"
+                android:layout_width="148dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+
+                android:text="Doc.."
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/good_pause_name"
+                app:layout_constraintTop_toBottomOf="@id/good_resume_doc" />
+
+            <TextView
+                android:id="@+id/good_resume_doc"
+                android:layout_width="148dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+
+                android:text="Doc.."
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/good_resume_name"
+                app:layout_constraintTop_toBottomOf="@id/good_start_doc" />
+
+            <TextView
+                android:id="@+id/good_finish_doc"
+                android:layout_width="148dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+
+                android:text="Doc.."
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/good_finish_name"
+                app:layout_constraintTop_toBottomOf="@id/good_pause_doc" />
+
+            <TextView
+                android:id="@+id/good_start_doc"
+                android:layout_width="148dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+
+                android:text="Doc.."
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/good_start_name"
+                app:layout_constraintTop_toBottomOf="@id/good_habit_title" />
+
+            <TextView
+                android:id="@+id/bad_start_doc"
+                android:layout_width="148dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+
+                android:text="Doc.."
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/bad_start_name"
+                app:layout_constraintTop_toBottomOf="@id/bad_habit_title" />
+
+            <TextView
+                android:id="@+id/bad_resume_doc"
+                android:layout_width="148dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+
+                android:text="Doc.."
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/bad_resume_name"
+                app:layout_constraintTop_toBottomOf="@id/bad_start_doc" />
+
+            <TextView
+                android:id="@+id/bad_pause_doc"
+                android:layout_width="148dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+
+                android:text="Doc.."
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/bad_pause_name"
+                app:layout_constraintTop_toBottomOf="@id/bad_resume_doc" />
+
+            <ImageButton
+                android:id="@+id/bad_resume_2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_edit_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_resume_1"
+                app:layout_constraintTop_toBottomOf="@id/bad_pause_2" />
+
+            <ImageButton
+                android:id="@+id/bad_resume_1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_delete_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_pause_doc"
+                app:layout_constraintTop_toBottomOf="@id/bad_pause_1" />
+
+            <ImageButton
+                android:id="@+id/bad_resume_3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_file_upload_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/bad_resume_2"
+                app:layout_constraintTop_toBottomOf="@id/bad_pause_3" />
+
+            <TextView
+                android:id="@+id/bad_finish_doc"
+                android:layout_width="148dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+
+                android:text="Doc.."
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/bad_finish_name"
+                app:layout_constraintTop_toBottomOf="@id/bad_pause_doc" />
+
+            <TextView
+                android:id="@+id/bad_start_name"
+                android:layout_width="104dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:text="Start"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bad_habit_title" />
+
+            <TextView
+                android:id="@+id/bad_resume_name"
+                android:layout_width="104dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Resume/Plus"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bad_start_name" />
+
+            <TextView
+                android:id="@+id/bad_pause_name"
+                android:layout_width="104dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Pause"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bad_resume_name" />
+
+            <TextView
+                android:id="@+id/bad_finish_name"
+                android:layout_width="104dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Finish"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bad_pause_name" />
+
+            <TextView
+                android:id="@+id/good_pause_name"
+                android:layout_width="104dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Pause"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/good_resume_name" />
+
+            <TextView
+                android:id="@+id/good_resume_name"
+                android:layout_width="104dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Resume/Plus"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/good_start_name" />
+
+            <TextView
+                android:id="@+id/good_finish_name"
+                android:layout_width="104dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Finish"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/good_pause_name" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/good_finish_name" />
+
+            <ImageButton
+                android:id="@+id/good_start_1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="@drawable/ic_round_delete_24"
+                android:text="ImageButton"
+                app:layout_constraintStart_toEndOf="@id/good_start_doc"
+                app:layout_constraintTop_toBottomOf="@id/good_habit_title" />
+
+            <ImageView
+                android:id="@+id/good_finish_doc_stroke"
+                android:layout_width="164dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toEndOf="@id/good_finish_name"
+                app:layout_constraintTop_toBottomOf="@id/good_pause_doc"
+                app:srcCompat="@drawable/textview_stroke" />
+
+            <ImageView
+                android:id="@+id/bad_start_doc_stroke"
+                android:layout_width="164dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toEndOf="@id/bad_start_name"
+                app:layout_constraintTop_toBottomOf="@id/bad_habit_title"
+                app:srcCompat="@drawable/textview_stroke" />
+
+            <ImageView
+                android:id="@+id/bad_resume_doc_stroke"
+                android:layout_width="164dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toEndOf="@id/bad_resume_name"
+                app:layout_constraintTop_toBottomOf="@id/bad_start_doc"
+                app:srcCompat="@drawable/textview_stroke" />
+
+            <ImageView
+                android:id="@+id/bad_pause_doc_stroke"
+                android:layout_width="164dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                app:layout_constraintStart_toEndOf="@id/bad_pause_name"
+                app:layout_constraintTop_toBottomOf="@id/bad_resume_doc"
+                app:srcCompat="@drawable/textview_stroke" />
+
+            <ImageView
+                android:id="@+id/bad_finish_doc_stroke"
+                android:layout_width="164dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toEndOf="@id/bad_finish_name"
+                app:layout_constraintTop_toBottomOf="@id/bad_pause_doc"
+                app:srcCompat="@drawable/textview_stroke" />
+
+            <ImageView
+                android:id="@+id/good_pause_doc_stroke"
+                android:layout_width="164dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toEndOf="@id/good_pause_name"
+                app:layout_constraintTop_toBottomOf="@id/good_resume_doc"
+                app:srcCompat="@drawable/textview_stroke" />
+
+            <ImageView
+                android:id="@+id/good_resume_doc_stroke"
+                android:layout_width="164dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toEndOf="@id/good_resume_name"
+                app:layout_constraintTop_toBottomOf="@id/good_start_doc"
+                app:srcCompat="@drawable/textview_stroke" />
+
+            <ImageView
+                android:id="@+id/good_start_doc_stroke"
+                android:layout_width="164dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toEndOf="@id/good_start_name"
+                app:layout_constraintTop_toBottomOf="@id/good_habit_title"
+                app:srcCompat="@drawable/textview_stroke" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/voice_pack_add_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Add"/>
+
+        <Button
+            android:id="@+id/voice_pack_cancel_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
+
+    </LinearLayout>
+
+</LinearLayout>

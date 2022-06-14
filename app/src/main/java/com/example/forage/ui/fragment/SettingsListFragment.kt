@@ -47,7 +47,13 @@ class SettingsListFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         val adapter = SettingsAdapter { item ->
-            val action = SettingsListFragmentDirections.actionSettingsListFragmentToVoiceSettingsListFragment()
+            val action = when(item.nameId) {
+                R.string.setting_voice_setting -> SettingsListFragmentDirections.actionSettingsListFragmentToVoiceSettingsListFragment()
+                //R.string.setting_more_setting ->
+                R.string.setting_tutorial -> SettingsListFragmentDirections.actionSettingsListFragmentToTutorialFragment()
+                //R.string.setting_
+                else -> SettingsListFragmentDirections.actionSettingsListFragmentSelf()
+            }
             findNavController().navigate(action)
         }
 

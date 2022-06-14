@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_settingsListFragment_to_tutorialFragment"
             app:destination="@id/tutorialFragment" />
+        <action
+            android:id="@+id/action_settingsListFragment_self"
+            app:destination="@id/settingsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/voiceSettingsListFragment"
@@ -44,6 +47,9 @@
         <action
             android:id="@+id/action_voiceSettingsListFragment_to_editVoicePackFragment"
             app:destination="@id/editVoicePackFragment" />
+        <action
+            android:id="@+id/action_voiceSettingsListFragment_to_addVoicePackFragment"
+            app:destination="@id/addVoicePackFragment" />
     </fragment>
     <fragment
         android:id="@+id/habitListFragment"
@@ -137,11 +143,24 @@
         android:id="@+id/editVoicePackFragment"
         android:name="com.example.forage.ui.fragment.EditVoicePackFragment"
         android:label="@string/edit_voice_pack_bar"
-        tools:layout="@layout/fragment_edit_voice_pack" />
+        tools:layout="@layout/fragment_edit_voice_pack" >
+        <action
+            android:id="@+id/action_editVoicePackFragment_to_voiceSettingsListFragment"
+            app:destination="@id/voiceSettingsListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tutorialFragment"
         android:name="com.example.forage.ui.fragment.TutorialFragment"
         android:label="@string/tutorial_bar"
         tools:layout="@layout/fragment_tutorial" />
+    <fragment
+        android:id="@+id/addVoicePackFragment"
+        android:name="com.example.forage.ui.fragment.AddVoicePackFragment"
+        android:label="fragment_add_voice_pack"
+        tools:layout="@layout/fragment_add_voice_pack" >
+        <action
+            android:id="@+id/action_addVoicePackFragment_to_voiceSettingsListFragment"
+            app:destination="@id/voiceSettingsListFragment" />
+    </fragment>
 
 </navigation>

@@ -20,7 +20,7 @@ class SettingsAdapter(
     class SettingsViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val nameView: TextView = view.findViewById(R.id.name)
         val descriptionView: TextView = view.findViewById(R.id.description)
-        val button: ImageButton = view.findViewById(R.id.imageButton)
+        //val itemView: View = view.findViewById(R.id.settings_list_item)
         val divider: View = view.findViewById(R.id.view)
     }
 
@@ -43,7 +43,7 @@ class SettingsAdapter(
         if(position.equals(dataset.size-1)) holder.divider.visibility = View.GONE
 
 
-        holder.button.setOnClickListener{
+        holder.itemView.setOnClickListener{
             clickListener(item)
         }
     }

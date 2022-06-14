@@ -64,6 +64,7 @@
     <string name="focus_mode_reminder_toggle">Open Focus-Mode Reminder</string>
     <string name="chill_mode_reminder_toggle">Open Chill-Mode Reminder</string>
     <string name="voice_pack">Voice Packs</string>
+    <string name="add_voice_pack">Add new voice pack</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="list_fragment_label">List Fragment</string>

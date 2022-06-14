@@ -57,10 +57,12 @@ class VoiceSettingsListFragment : Fragment() {
 
         binding.apply {
             voiceSettingsRecyclerView.adapter = adapter
-            findNavController().navigate(
-                R.id.action_voiceSettingsListFragment_to_editVoicePackFragment
-            )
+            addVoicePackButton.setOnClickListener {
+                findNavController().navigate(R.id.action_voiceSettingsListFragment_to_addVoicePackFragment)
+            }
         }
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

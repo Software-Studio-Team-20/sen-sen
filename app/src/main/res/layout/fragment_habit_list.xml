@@ -71,29 +71,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/bookmark"
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/goodBookmark"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/white">
 
-            <View
-                android:id="@+id/good_bookmark"
-                android:layout_width="190dp"
-                android:layout_height="60dp"
-                android:background="@drawable/white_sun"
-                android:foregroundGravity="center" />
+            <ImageView
+                android:id="@+id/sun_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/sun"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-            <View
-                android:id="@+id/bad_bookmark"
-                android:layout_width="190dp"
-                android:layout_height="60dp"
-                android:background="@drawable/grey_moon"
-                android:foregroundGravity="center" />
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/badBookmark"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/goodBookmark"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/grey">
+
+            <ImageView
+                android:id="@+id/moon_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/moon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/card"
