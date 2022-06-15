@@ -3,13 +3,27 @@ package com.example.forage.ui.fragment
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.navArgs
+import com.example.forage.BaseApplication
 import com.example.forage.R
 import com.example.forage.databinding.FragmentAddVoicePackBinding
+import com.example.forage.model.VoiceDataItem
+import com.example.forage.ui.viewmodel.VoiceDataViewModel
+import com.example.forage.ui.viewmodel.VoiceDataViewModelFactory
 
 class AddVoicePackFragment : Fragment() {
     private var _binding: FragmentAddVoicePackBinding?= null
     private val binding get() = _binding!!
+
+    private val navigationArgs: AddVoicePackFragmentArgs by navArgs()
+    private lateinit var voiceDataItem: VoiceDataItem
+
+    private val viewModel: VoiceDataViewModel by activityViewModels(){
+        VoiceDataViewModelFactory(
+            (activity?.application as BaseApplication).voiceDataDatabase.voiceDataDao()
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,13 +51,38 @@ class AddVoicePackFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.apply{
-            voicePackAddButton.setOnClickListener {
-                findNavController().navigate(R.id.action_addVoicePackFragment_to_voiceSettingsListFragment)
+        super.onViewCreated(view, savedInstanceState)
+        val id = navigationArgs.id
+        if (id > 0) {
+            viewModel.receive(id).observe(this.viewLifecycleOwner) { item ->
+                voiceDataItem = item
+                bindVoiceData(voiceDataItem)
             }
-            voicePackCancelButton.setOnClickListener {
-                findNavController().navigate(R.id.action_addVoicePackFragment_to_voiceSettingsListFragment)
+        } else {
+            binding.voicePackAddButton.setOnClickListener {
+                addVoiceData()
             }
         }
     }
+
+    private fun addVoiceData() {
+        /*if (isValidEntry()) {
+            /*viewModel.addVoiceData(
+
+            )
+            findNavController().navigate(
+                R.id.action_addVoicePackFragment_to_voiceSettingsListFragment
+            )*/
+        }*/
+    }
+
+    private fun bindVoiceData(item: VoiceDataItem) {
+        binding.apply {
+
+        }
+    }
+
+    /*private fun isValidEntry() = viewModel.isValidEntry(
+        binding..text.toString()
+    )*/
 }

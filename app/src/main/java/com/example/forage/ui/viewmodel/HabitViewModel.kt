@@ -16,6 +16,10 @@ class HabitViewModel(private val habitDao: HabitDao) : ViewModel() {
         return allHabit
     }
 
+    fun getHabitById (id: Long) : LiveData<HabitItem> {
+        return habitDao.gethabit(id).asLiveData()
+    }
+
     fun addHabit(
         name: String,
         goal: String,

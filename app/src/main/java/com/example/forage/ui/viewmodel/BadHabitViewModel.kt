@@ -3,6 +3,7 @@ package com.example.forage.ui.viewmodel
 import androidx.lifecycle.*
 import com.example.forage.data.BadHabitDao
 import com.example.forage.model.BadHabitItem
+import com.example.forage.model.HabitItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
@@ -14,6 +15,10 @@ class BadHabitViewModel (private val badHabitDao: BadHabitDao) : ViewModel() {
 
     fun getBadHabit() : LiveData<List<BadHabitItem>> {
         return allBadHabit
+    }
+
+    fun getBadHabitById (id: Long) : LiveData<BadHabitItem> {
+        return badHabitDao.gethabit(id).asLiveData()
     }
 
     fun addBadHabit(

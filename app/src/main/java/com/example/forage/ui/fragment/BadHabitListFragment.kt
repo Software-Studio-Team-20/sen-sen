@@ -43,8 +43,8 @@ class BadHabitListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = BadHabitAdapter { habitItem ->
-            val action = BadHabitListFragmentDirections
-                .actionBadHabitListFragmentToAddBadHabitFragment()
+
+            /*
             val dialogBuilder = AlertDialog.Builder(requireActivity())
             dialogBuilder.setMessage("Are you sure to delete ${habitItem.name} ?")
                 // if the dialog is cancelable
@@ -59,7 +59,11 @@ class BadHabitListFragment : Fragment() {
             val alert = dialogBuilder.create()
             alert.setTitle("Delete")
             alert.show()
-//            findNavController().navigate(action)
+            */
+
+            val action = BadHabitListFragmentDirections
+                .actionBadHabitListFragmentToAddBadHabitFragment(habitItem.id)
+            findNavController().navigate(action)
         }
 
         viewModel.allBadHabit.observe(this.viewLifecycleOwner) { habitItem ->

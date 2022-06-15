@@ -1,118 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/light_grey"
-    android:foregroundGravity="center"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:padding="16dp"
     tools:context=".ui.fragment.EditHabitFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/action_bar"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_label"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/add_button"
-            android:layout_width="144dp"
-            android:layout_height="48dp"
-            android:background="@color/orange"
-            android:foregroundGravity="center"
-            android:src="@drawable/ic_round_add_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/edit_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:backgroundTint="@color/light_orange"
-            android:src="@drawable/ic_round_edit_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/add_button"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white" />
-
-        <ImageButton
-            android:id="@+id/chart_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:backgroundTint="@color/light_orange"
-            android:foregroundGravity="center"
-            android:src="@drawable/ic_round_bar_chart_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/add_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/habit_list_card"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/add_name"
+        app:boxStrokeColor="@color/orange"
+        app:hintTextColor="@color/orange"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/bookmark"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <View
-                android:id="@+id/good_bookmark"
-                android:layout_width="190dp"
-                android:layout_height="60dp"
-                android:background="@color/white"
-                android:foregroundGravity="center" />
-
-            <View
-                android:id="@+id/bad_bookmark"
-                android:layout_width="190dp"
-                android:layout_height="60dp"
-                android:background="@color/grey"
-                android:foregroundGravity="center" />
-        </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/card"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="60dp"
-            android:background="@color/white"
-            android:foregroundGravity="center"
-            app:layout_constraintTop_toTopOf="parent">
+            android:inputType="textAutoComplete"
+            android:singleLine="true"
+            android:textColorHint="@color/orange"
+            android:textColorLink="@color/orange" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/habit_recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:foregroundGravity="center"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/goals_label"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/add_goals"
+        app:boxStrokeColor="@color/orange"
+        app:hintTextColor="@color/orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/goals_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textAutoComplete"
+            android:singleLine="true"
+            android:textColorHint="@color/orange"
+            android:textColorLink="@color/orange" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/frequency_label"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_frequency"
+        android:layout_marginTop="16dp"
+        app:boxStrokeColor="@color/orange"
+        app:hintTextColor="@color/orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/goals_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/frequency_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textAutoComplete"
+            android:singleLine="true"
+            android:textColorHint="@color/orange"
+            android:textColorLink="@color/orange" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/time_range_label"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/add_time_range"
+        app:boxStrokeColor="@color/orange"
+        app:hintTextColor="@color/orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/time_range_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textAutoComplete"
+            android:singleLine="true"
+            android:textColorHint="@color/orange"
+            android:textColorLink="@color/orange" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reminder_label"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/add_reminder"
+        app:boxStrokeColor="@color/orange"
+        app:hintTextColor="@color/orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/time_range_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reminder_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textAutoComplete"
+            android:singleLine="true"
+            android:textColorHint="@color/orange"
+            android:textColorLink="@color/orange" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/note_label"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/add_note"
+        app:boxStrokeColor="@color/orange"
+        app:hintTextColor="@color/orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reminder_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/note_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textAutoComplete"
+            android:singleLine="true"
+            android:textColorHint="@color/orange"
+            android:textColorLink="@color/orange" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/note_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:backgroundTint="@color/orange"/>
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel" />
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

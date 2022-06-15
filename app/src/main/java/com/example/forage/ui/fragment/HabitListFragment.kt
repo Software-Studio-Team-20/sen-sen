@@ -43,8 +43,8 @@ class HabitListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = HabitAdapter { habitItem ->
-            val action = HabitListFragmentDirections
-                .actionHabitListFragmentToAddHabitFragment()
+
+            /*
             val dialogBuilder = AlertDialog.Builder(requireActivity())
             dialogBuilder.setMessage("Are you sure to delete ${habitItem.name} ?")
                 // if the dialog is cancelable
@@ -59,7 +59,11 @@ class HabitListFragment : Fragment() {
             val alert = dialogBuilder.create()
             alert.setTitle("Delete")
             alert.show()
-//            findNavController().navigate(action)
+             */
+
+            val action = HabitListFragmentDirections
+                .actionHabitListFragmentToViewHabitFragment(habitItem.id)
+            findNavController().navigate(action)
         }
 
         viewModel.allHabit.observe(this.viewLifecycleOwner){ habitItem ->

@@ -73,6 +73,7 @@
     <string name="notes">Notes</string>
     <string name="save">Save</string>
     <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
@@ -95,5 +96,5 @@
     <string name="start">Start</string>
     <string name="pause">Pause</string>
     <string name="resume">Resume</string>
-    <string name="Finish">Finish</string>
+    <string name="finish">Finish</string>
 </resources>

@@ -11,24 +11,28 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.forage.BaseApplication
 import com.example.forage.R
 import com.example.forage.databinding.FragmentTutorialBinding
+import com.example.forage.databinding.FragmentViewBadHabitBinding
 import com.example.forage.databinding.FragmentViewHabitBinding
+import com.example.forage.model.BadHabitItem
 import com.example.forage.model.HabitItem
 import com.example.forage.ui.adapter.TutorialAdapter
+import com.example.forage.ui.viewmodel.BadHabitViewModel
+import com.example.forage.ui.viewmodel.BadHabitViewModelFactory
 import com.example.forage.ui.viewmodel.HabitViewModel
 import com.example.forage.ui.viewmodel.HabitViewModelFactory
 
-class ViewHabitFragment : Fragment() {
+class ViewBadHabitFragment : Fragment() {
 
-    private val navigationArgs: ViewHabitFragmentArgs by navArgs()
+    private val navigationArgs: ViewBadHabitFragmentArgs by navArgs()
 
-    private var _binding: FragmentViewHabitBinding?= null
+    private var _binding: FragmentViewBadHabitBinding?= null
     private val binding get() = _binding!!
 
-    private lateinit var habitItem: HabitItem
+    private lateinit var habitItem: BadHabitItem
 
-    private val viewModel: HabitViewModel by activityViewModels {
-        HabitViewModelFactory(
-            (activity?.application as BaseApplication).habitDatabase.habitDao()
+    private val viewModel: BadHabitViewModel by activityViewModels {
+        BadHabitViewModelFactory(
+            (activity?.application as BaseApplication).badHabitDatabase.badHabitDao()
         )
     }
 
@@ -42,7 +46,7 @@ class ViewHabitFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentViewHabitBinding.inflate(inflater, container, false)
+        _binding = FragmentViewBadHabitBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -60,7 +64,7 @@ class ViewHabitFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = navigationArgs.id
 
-        viewModel.getHabitById(id).observe(this.viewLifecycleOwner) { selectedItem ->
+        viewModel.getBadHabitById(id).observe(this.viewLifecycleOwner) { selectedItem ->
             habitItem = selectedItem
         }
 
@@ -87,7 +91,7 @@ class ViewHabitFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val id = navigationArgs.id
         //if(id>0) {
-            viewModel.getHabitById(id).observe(this.viewLifecycleOwner) { selectedItem ->
+            viewModel.getBadHabitById(id).observe(this.viewLifecycleOwner) { selectedItem ->
                 habitItem = selectedItem
                 bindHabitItem(habitItem)
             }
@@ -95,20 +99,20 @@ class ViewHabitFragment : Fragment() {
 
     }
 
-    fun bindHabitItem(habitItem: HabitItem){
+    fun bindHabitItem(habitItem: BadHabitItem){
         binding.apply {
 
         }
     }
 
-    fun deleteHabitItem(habitItem: HabitItem){
-        viewModel.deleteHabit(habitItem)
-        findNavController().navigate(R.id.action_viewHabitFragment_to_habitListFragment)
+    fun deleteHabitItem(habitItem: BadHabitItem){
+        viewModel.deleteBadHabit(habitItem)
+        findNavController().navigate(R.id.action_viewBadHabitFragment_to_badHabitListFragment)
     }
 
-    fun editHabitItem(habitItem: HabitItem){
-        val action = ViewHabitFragmentDirections
-            .actionViewHabitFragmentToEditHabitFragment(habitItem.id)
+    fun editHabitItem(habitItem: BadHabitItem){
+        val action = ViewBadHabitFragmentDirections
+            .actionViewBadHabitFragmentToEditBadHabitFragment(habitItem.id)
         findNavController().navigate(action)
     }
 
