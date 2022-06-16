@@ -1,11 +1,14 @@
 package com.example.forage.ui.fragment
 
+import android.app.AlertDialog
 import android.content.ContentValues.TAG
+import android.content.DialogInterface
 import android.media.MediaPlayer
 import android.media.RingtoneManager
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
@@ -54,7 +57,7 @@ class AddVoicePackFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val navigationArgs: AddVoicePackFragmentArgs by navArgs()
-    private lateinit var voiceDataItem: VoiceDataItem
+    //private lateinit var voiceDataItem: VoiceDataItem
 
     private val viewModel: VoiceDataViewModel by activityViewModels(){
         VoiceDataViewModelFactory(
@@ -89,37 +92,23 @@ class AddVoicePackFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val id = navigationArgs.id
-        if (id > 0) {
-            viewModel.receive(id).observe(this.viewLifecycleOwner) { item ->
-                voiceDataItem = item
-                bindVoiceData(voiceDataItem)
-            }
-        } else {
-            binding.voicePackAddButton.setOnClickListener {
-                addVoiceData()
-            }
-        }
+        //val id = navigationArgs.id
+        //if (id > 0) {
+        //viewModel.receive(id).observe(this.viewLifecycleOwner) { item ->
+        //    voiceDataItem = item
+        //}
+        //}
 
         binding.apply {
             /* On click add button, navigate to addHabitFragment */
             selectVoice1.setOnClickListener {
-                System.out.println(url1)
-                System.out.println(url2)
-                System.out.println(url3)
-                System.out.println(url4)
-                System.out.println(url5)
-                System.out.println(url6)
-                System.out.println(url7)
-                System.out.println(url8)
-
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog",
+                    dialogTitle = "Voice for good start",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
-//                            System.out.println(ringtones[0].uri)
                             url1 = ringtones[0].uri.toString()
+                            goodStartUrl.text = url1
                         }
                     }
                 ).show(childFragmentManager, null)
@@ -127,10 +116,11 @@ class AddVoicePackFragment : Fragment() {
             selectVoice2.setOnClickListener {
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog",
+                    dialogTitle = "Voice for good pause",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
                             url2 = ringtones[0].uri.toString()
+                            goodPauseUrl.text = url2
                         }
                     }
                 ).show(childFragmentManager, null)
@@ -138,10 +128,11 @@ class AddVoicePackFragment : Fragment() {
             selectVoice3.setOnClickListener {
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog",
+                    dialogTitle = "Voice for good resume",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
                             url3 = ringtones[0].uri.toString()
+                            goodResumeUrl.text = url3
                         }
                     }
                 ).show(childFragmentManager, null)
@@ -149,10 +140,11 @@ class AddVoicePackFragment : Fragment() {
             selectVoice4.setOnClickListener {
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog",
+                    dialogTitle = "Voice for good finish",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
                             url4 = ringtones[0].uri.toString()
+                            binding.goodFinishUrl.text = url4
                         }
                     }
                 ).show(childFragmentManager, null)
@@ -160,10 +152,11 @@ class AddVoicePackFragment : Fragment() {
             selectVoice5.setOnClickListener {
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog",
+                    dialogTitle = "Voice for bad start",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
                             url5 = ringtones[0].uri.toString()
+                            badStartUrl.text = url5
                         }
                     }
                 ).show(childFragmentManager, null)
@@ -171,10 +164,11 @@ class AddVoicePackFragment : Fragment() {
             selectVoice6.setOnClickListener {
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog",
+                    dialogTitle = "Voice for bad pause",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
                             url6 = ringtones[0].uri.toString()
+                            badPauseUrl.text = url6
                         }
                     }
                 ).show(childFragmentManager, null)
@@ -182,10 +176,11 @@ class AddVoicePackFragment : Fragment() {
             selectVoice7.setOnClickListener {
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog",
+                    dialogTitle = "Voice for bad resume",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
                             url7 = ringtones[0].uri.toString()
+                            badResumeUrl.text = url5
                         }
                     }
                 ).show(childFragmentManager, null)
@@ -193,51 +188,57 @@ class AddVoicePackFragment : Fragment() {
             selectVoice8.setOnClickListener {
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog",
+                    dialogTitle = "Voice for bad finish",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
                             url8 = ringtones[0].uri.toString()
+                            badFinishUrl.text = url8
                         }
                     }
                 ).show(childFragmentManager, null)
             }
             voicePackAddButton.setOnClickListener {
-                viewModel.addVoiceData("voice1", url1, url2, url3, url4, url5, url6, url7, url8)
+                addVoice()
             }
         }
     }
 
-
-//    fun selectVoice(){
-//        RingtonePickerDialog.createEphemeralInstance(
-//            settings = settings,
-//            dialogTitle = "Dialog",
-//            listener = object : UltimateRingtonePicker.RingtonePickerListener {
-//                override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
-//
-//                }
-//            }
-//        ).show(supportFragmentManager, null)
-//    }
-
-    private fun addVoiceData() {
-        /*if (isValidEntry()) {
-            /*viewModel.addVoiceData(
-
-            )
+    private fun addVoice() {
+        if (isValidEntry()) {
+            viewModel.addVoiceData(
+                binding.voicePackNameInput.text.toString(),
+                url1, url2, url3, url4, url5, url6, url7, url8)
             findNavController().navigate(
                 R.id.action_addVoicePackFragment_to_voiceSettingsListFragment
-            )*/
-        }*/
-    }
+            )
+        } else {
+            val dialogBuilder = AlertDialog.Builder(requireActivity())
+            dialogBuilder.setMessage("Please make sure that you have added all voice pack and also give them a name!")
+                // if the dialog is cancelable
+                .setCancelable(false)
+                .setNegativeButton("Opps...", DialogInterface.OnClickListener {
+                        dialog, id -> dialog.dismiss()
+                })
+                .setPositiveButton("Ok!", DialogInterface.OnClickListener {
+                        dialog, id -> dialog.dismiss()
+                })
 
-    private fun bindVoiceData(item: VoiceDataItem) {
-        binding.apply {
-
+            val alert = dialogBuilder.create()
+            alert.setTitle("Something went wrong!")
+            alert.setIcon(R.drawable.ic_baseline_notifications_none_24)
+            alert.show()
         }
     }
 
-    /*private fun isValidEntry() = viewModel.isValidEntry(
-        binding..text.toString()
-    )*/
+    private fun isValidEntry() : Boolean {
+        return binding.voicePackNameInput.text.toString().isNotBlank()
+                && url1.isNotBlank()
+                && url2.isNotBlank()
+                && url3.isNotBlank()
+                && url4.isNotBlank()
+                && url5.isNotBlank()
+                && url6.isNotBlank()
+                && url7.isNotBlank()
+                && url8.isNotBlank()
+    }
 }

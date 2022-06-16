@@ -16,6 +16,8 @@ import com.example.forage.model.BadHabitItem
 import com.example.forage.ui.adapter.BadHabitAdapter
 import com.example.forage.ui.viewmodel.BadHabitViewModel
 import com.example.forage.ui.viewmodel.BadHabitViewModelFactory
+import com.example.forage.ui.viewmodel.VoiceDataViewModel
+import com.example.forage.ui.viewmodel.VoiceDataViewModelFactory
 
 class BadHabitListFragment : Fragment() {
     private val viewModel: BadHabitViewModel by activityViewModels {
@@ -64,12 +66,6 @@ class BadHabitListFragment : Fragment() {
             val action = BadHabitListFragmentDirections
                 .actionBadHabitListFragmentToViewBadHabitFragment(habitItem.id)
             findNavController().navigate(action)
-        }
-
-        viewModel.allBadHabit.observe(this.viewLifecycleOwner) { habitItem ->
-            habitItem.let {
-                adapter.submitList(it)
-            }
         }
 
         binding.apply {
