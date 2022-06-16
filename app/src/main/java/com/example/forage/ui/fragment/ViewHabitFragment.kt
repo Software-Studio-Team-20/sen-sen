@@ -94,7 +94,15 @@ class ViewHabitFragment : Fragment() {
             }
 
             binding.addFrequency.setOnClickListener(){
-                addFrequencyByOne(habitItem)
+                if(habitItem.frequency.toInt() < habitItem.goal.toInt()) {
+                    var frequencyTemp = habitItem.frequency
+                    frequencyTemp = (frequencyTemp.toInt() + 1).toString()
+                    changeFrequency(habitItem, frequencyTemp)
+                }
+            }
+
+            binding.resetFrequency.setOnClickListener(){
+                changeFrequency(habitItem, "0")
             }
         //}
 
@@ -118,8 +126,16 @@ class ViewHabitFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    fun addFrequencyByOne(habitItem:HabitItem){
-
+    fun changeFrequency(habitItem:HabitItem, tmp:String){
+        viewModel.updateHabit(
+            id = habitItem.id,
+            name = habitItem.name.toString(),
+            goal = habitItem.goal,
+            frequency = tmp,
+            timeRange = habitItem.timeRange,
+            reminder = habitItem.reminderMesseage.toString(),
+            note = habitItem.note.toString()
+        )
     }
 
 }

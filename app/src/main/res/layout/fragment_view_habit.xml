@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="180dp"
-        android:text="Button"
+        android:text="Reset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:layout_marginBottom="180dp"
-        android:text="Button"
+        android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -66,6 +66,7 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="188dp"
         android:text="/"
+        android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/current_goal"
         app:layout_constraintHorizontal_bias="0.351"
         app:layout_constraintStart_toEndOf="@+id/current_frequency"
