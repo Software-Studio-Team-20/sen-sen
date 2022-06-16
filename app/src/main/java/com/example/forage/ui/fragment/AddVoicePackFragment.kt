@@ -1,8 +1,10 @@
 package com.example.forage.ui.fragment
 
+import android.content.ContentValues.TAG
 import android.media.MediaPlayer
 import android.media.RingtoneManager
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -92,27 +94,47 @@ class AddVoicePackFragment : Fragment() {
         binding.apply {
             /* On click add button, navigate to addHabitFragment */
             selectVoice1.setOnClickListener {
-                RingtonePickerDialog.createInstance(
+                RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog!"
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+
+                        }
+                    }
                 ).show(childFragmentManager, null)
             }
             selectVoice2.setOnClickListener {
-                RingtonePickerDialog.createInstance(
+                RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog!"
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+
+                        }
+                    }
                 ).show(childFragmentManager, null)
             }
             selectVoice3.setOnClickListener {
-                RingtonePickerDialog.createInstance(
+                RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog!"
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+
+                        }
+                    }
                 ).show(childFragmentManager, null)
             }
             selectVoice4.setOnClickListener {
-                RingtonePickerDialog.createInstance(
+                RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
-                    dialogTitle = "Dialog!"
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+
+                        }
+                    }
                 ).show(childFragmentManager, null)
             }
         }
