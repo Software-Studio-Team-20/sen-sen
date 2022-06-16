@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LiveData
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -91,13 +92,18 @@ class ViewHabitFragment : Fragment() {
                 habitItem = selectedItem
                 bindHabitItem(habitItem)
             }
+
+            binding.addFrequency.setOnClickListener(){
+                addFrequencyByOne(habitItem)
+            }
         //}
 
     }
 
     fun bindHabitItem(habitItem: HabitItem){
         binding.apply {
-
+            currentFrequency.text = habitItem.frequency
+            currentGoal.text = habitItem.goal
         }
     }
 
@@ -110,6 +116,10 @@ class ViewHabitFragment : Fragment() {
         val action = ViewHabitFragmentDirections
             .actionViewHabitFragmentToEditHabitFragment(habitItem.id)
         findNavController().navigate(action)
+    }
+
+    fun addFrequencyByOne(habitItem:HabitItem){
+
     }
 
 }
