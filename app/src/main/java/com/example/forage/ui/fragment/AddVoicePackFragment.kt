@@ -40,6 +40,15 @@ val settings = UltimateRingtonePicker.Settings(
     )
 )
 
+var url1: String = "res/raw/bad_delete.m4a"
+var url2: String = "res/raw/bad_delete.m4a"
+var url3: String = "res/raw/bad_delete.m4a"
+var url4: String = "res/raw/bad_delete.m4a"
+var url5: String = "res/raw/bad_delete.m4a"
+var url6: String = "res/raw/bad_delete.m4a"
+var url7: String = "res/raw/bad_delete.m4a"
+var url8: String = "res/raw/bad_delete.m4a"
+
 class AddVoicePackFragment : Fragment() {
     private var _binding: FragmentAddVoicePackBinding?= null
     private val binding get() = _binding!!
@@ -91,15 +100,26 @@ class AddVoicePackFragment : Fragment() {
                 addVoiceData()
             }
         }
+
         binding.apply {
             /* On click add button, navigate to addHabitFragment */
             selectVoice1.setOnClickListener {
+                System.out.println(url1)
+                System.out.println(url2)
+                System.out.println(url3)
+                System.out.println(url4)
+                System.out.println(url5)
+                System.out.println(url6)
+                System.out.println(url7)
+                System.out.println(url8)
+
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
                     dialogTitle = "Dialog",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
-
+//                            System.out.println(ringtones[0].uri)
+                            url1 = ringtones[0].uri.toString()
                         }
                     }
                 ).show(childFragmentManager, null)
@@ -110,7 +130,7 @@ class AddVoicePackFragment : Fragment() {
                     dialogTitle = "Dialog",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
-
+                            url2 = ringtones[0].uri.toString()
                         }
                     }
                 ).show(childFragmentManager, null)
@@ -121,7 +141,7 @@ class AddVoicePackFragment : Fragment() {
                     dialogTitle = "Dialog",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
-
+                            url3 = ringtones[0].uri.toString()
                         }
                     }
                 ).show(childFragmentManager, null)
@@ -132,10 +152,57 @@ class AddVoicePackFragment : Fragment() {
                     dialogTitle = "Dialog",
                     listener = object : UltimateRingtonePicker.RingtonePickerListener {
                         override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
-
+                            url4 = ringtones[0].uri.toString()
                         }
                     }
                 ).show(childFragmentManager, null)
+            }
+            selectVoice5.setOnClickListener {
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+                            url5 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+            selectVoice6.setOnClickListener {
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+                            url6 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+            selectVoice7.setOnClickListener {
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+                            url7 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+            selectVoice8.setOnClickListener {
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+                            url8 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+            voicePackAddButton.setOnClickListener {
+                viewModel.addVoiceData("voice1", url1, url2, url3, url4, url5, url6, url7, url8)
             }
         }
     }
