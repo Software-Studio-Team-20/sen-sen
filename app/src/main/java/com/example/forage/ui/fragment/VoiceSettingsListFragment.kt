@@ -44,7 +44,7 @@ class VoiceSettingsListFragment : Fragment() {
 
         val adapter = VoiceDataAdapter { item ->
             val action = VoiceSettingsListFragmentDirections
-                .actionVoiceSettingsListFragmentToEditVoicePackFragment()
+                .actionVoiceSettingsListFragmentToEditVoicePackFragment(item.id)
             findNavController().navigate(action)
         }
 
