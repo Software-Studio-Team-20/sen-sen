@@ -40,14 +40,14 @@ val settings = UltimateRingtonePicker.Settings(
     )
 )
 
-var url1: String = "res/raw/bad_delete.m4a"
-var url2: String = "res/raw/bad_delete.m4a"
-var url3: String = "res/raw/bad_delete.m4a"
-var url4: String = "res/raw/bad_delete.m4a"
-var url5: String = "res/raw/bad_delete.m4a"
-var url6: String = "res/raw/bad_delete.m4a"
-var url7: String = "res/raw/bad_delete.m4a"
-var url8: String = "res/raw/bad_delete.m4a"
+var url1: String = "R.raw.bad_delete.m4a"
+var url2: String = "R.raw.bad_delete.m4a"
+var url3: String = "R.raw.bad_delete.m4a"
+var url4: String = "R.raw.bad_delete.m4a"
+var url5: String = "R.raw.bad_delete.m4a"
+var url6: String = "R.raw.bad_delete.m4a"
+var url7: String = "R.raw.bad_delete.m4a"
+var url8: String = "R.raw.bad_delete.m4a"
 
 class AddVoicePackFragment : Fragment() {
     private var _binding: FragmentAddVoicePackBinding?= null
@@ -104,14 +104,14 @@ class AddVoicePackFragment : Fragment() {
         binding.apply {
             /* On click add button, navigate to addHabitFragment */
             selectVoice1.setOnClickListener {
-                System.out.println(url1)
-                System.out.println(url2)
-                System.out.println(url3)
-                System.out.println(url4)
-                System.out.println(url5)
-                System.out.println(url6)
-                System.out.println(url7)
-                System.out.println(url8)
+//                System.out.println(url1)
+//                System.out.println(url2)
+//                System.out.println(url3)
+//                System.out.println(url4)
+//                System.out.println(url5)
+//                System.out.println(url6)
+//                System.out.println(url7)
+//                System.out.println(url8)
 
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
@@ -208,17 +208,7 @@ class AddVoicePackFragment : Fragment() {
     }
 
 
-//    fun selectVoice(){
-//        RingtonePickerDialog.createEphemeralInstance(
-//            settings = settings,
-//            dialogTitle = "Dialog",
-//            listener = object : UltimateRingtonePicker.RingtonePickerListener {
-//                override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
-//
-//                }
-//            }
-//        ).show(supportFragmentManager, null)
-//    }
+
 
     private fun addVoiceData() {
         /*if (isValidEntry()) {

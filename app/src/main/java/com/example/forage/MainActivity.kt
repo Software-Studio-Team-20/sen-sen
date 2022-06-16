@@ -35,6 +35,10 @@ import com.example.forage.ui.adapter.SettingsAdapter
  */
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        var INDEX : Long = 1
+    }
+
     private lateinit var navController: NavController
 
     private lateinit var appBarConfiguration: AppBarConfiguration

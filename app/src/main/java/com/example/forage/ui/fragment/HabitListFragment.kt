@@ -1,26 +1,39 @@
 package com.example.forage.ui.fragment
 
 import android.app.AlertDialog
+import android.content.ClipData
 import android.content.DialogInterface
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.*
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.map
 import androidx.navigation.fragment.findNavController
 import com.example.forage.BaseApplication
+import com.example.forage.MainActivity.Companion.INDEX
 import com.example.forage.R
 import com.example.forage.databinding.FragmentHabitListBinding
 import com.example.forage.model.HabitItem
+import com.example.forage.model.VoiceDataItem
 import com.example.forage.ui.adapter.HabitAdapter
 import com.example.forage.ui.viewmodel.HabitViewModel
 import com.example.forage.ui.viewmodel.HabitViewModelFactory
+import com.example.forage.ui.viewmodel.VoiceDataViewModel
+import com.example.forage.ui.viewmodel.VoiceDataViewModelFactory
 
 class HabitListFragment : Fragment() {
     private val viewModel: HabitViewModel by activityViewModels {
         HabitViewModelFactory(
             (activity?.application as BaseApplication).habitDatabase.habitDao()
+        )
+    }
+    private val viewModel_voice: VoiceDataViewModel by activityViewModels(){
+        VoiceDataViewModelFactory(
+            (activity?.application as BaseApplication).voiceDataDatabase.voiceDataDao()
         )
     }
 
@@ -72,6 +85,10 @@ class HabitListFragment : Fragment() {
             }
         }
 
+        var voiceDataItem : VoiceDataItem ?= null
+        viewModel_voice.receive(INDEX).observe(this.viewLifecycleOwner) { selectedItem ->
+            voiceDataItem = selectedItem
+        }
         binding.apply {
             habitRecyclerView.adapter = adapter
 
@@ -92,8 +109,19 @@ class HabitListFragment : Fragment() {
             /* On click edit button, show radio button */
             editButton.setOnClickListener {
                 deleteHabit()
-                var mediaPlayer = MediaPlayer.create(context, R.raw.good_delete)
-                mediaPlayer.start()
+//                var mediaPlayer = MediaPlayer.create(context, R.raw.good_delete)
+
+                System.out.println("lalala")
+                //System.out.println(voiceDataItem?.goodPauseURL!!.toUri())
+                if(INDEX < 2) {
+                    var mediaPlayer = MediaPlayer.create(context, R.raw.good_delete)
+                    mediaPlayer.start()
+//                    mediaPlayer.release()
+                }else {
+                    var mediaPlayer = MediaPlayer.create(context, voiceDataItem?.goodPauseURL!!.toUri())
+                    mediaPlayer.start()
+//                    mediaPlayer.release()
+                }
             }
 
             /* On click char button, navigate to overviewFragment */

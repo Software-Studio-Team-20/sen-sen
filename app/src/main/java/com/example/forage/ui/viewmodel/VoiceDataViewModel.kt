@@ -12,18 +12,22 @@ import java.lang.IllegalArgumentException
 class VoiceDataViewModel (private val voiceDataDao: VoiceDataDao) : ViewModel() {
     val allVoiceData : LiveData<List<VoiceDataItem>> = voiceDataDao.getAll().asLiveData()
 
-    fun receive (id : Long) : LiveData<VoiceDataItem> = voiceDataDao.gethabit(id).asLiveData()
+    fun receive (id : Long) : LiveData<VoiceDataItem> { return voiceDataDao.gethabit(id).asLiveData()}
+
+
+//    var query = MutableLiveData<VoiceDataItem>()
+
 
     fun addVoiceData(
-        name: String = "voice 1",
-        goodStartURL : String = "raw/good_new.m4a",
-        goodPauseURL : String = "raw/good_delete.m4a",
-        goodResumeURL: String = "raw/good_new.m4a",
-        goodFinishURL: String = "raw/good_delete.m4a",
-        badStartURL  : String = "raw/bad_new.m4a",
-        badPauseURL  : String = "raw/bad_delete.m4a",
-        badResumeURL : String = "raw/bad_new.m4a",
-        badFinishURL : String = "raw/bad_delete.m4a"
+        name: String = "",
+        goodStartURL : String = "",
+        goodPauseURL : String = "",
+        goodResumeURL: String = "",
+        goodFinishURL: String = "",
+        badStartURL  : String = "",
+        badPauseURL  : String = "",
+        badResumeURL : String = "",
+        badFinishURL : String = ""
     ){
         val item = VoiceDataItem(
             name = name,

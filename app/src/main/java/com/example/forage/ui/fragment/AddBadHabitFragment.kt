@@ -4,16 +4,21 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.*
 import android.widget.TextView
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.forage.BaseApplication
+import com.example.forage.MainActivity.Companion.INDEX
 import com.example.forage.R
 import com.example.forage.databinding.FragmentAddBadHabitBinding
 import com.example.forage.model.BadHabitItem
+import com.example.forage.model.VoiceDataItem
 import com.example.forage.ui.viewmodel.BadHabitViewModel
 import com.example.forage.ui.viewmodel.BadHabitViewModelFactory
+import com.example.forage.ui.viewmodel.VoiceDataViewModel
+import com.example.forage.ui.viewmodel.VoiceDataViewModelFactory
 
 class AddBadHabitFragment: Fragment() {
     private var _binding: FragmentAddBadHabitBinding?= null
@@ -25,6 +30,11 @@ class AddBadHabitFragment: Fragment() {
     private val viewModel: BadHabitViewModel by activityViewModels(){
         BadHabitViewModelFactory(
             (activity?.application as BaseApplication).badHabitDatabase.badHabitDao()
+        )
+    }
+    private val viewModel_voice: VoiceDataViewModel by activityViewModels(){
+        VoiceDataViewModelFactory(
+            (activity?.application as BaseApplication).voiceDataDatabase.voiceDataDao()
         )
     }
 
@@ -56,6 +66,12 @@ class AddBadHabitFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val id = navigationArgs.id
+
+        var voiceDataItem : VoiceDataItem?= null
+        viewModel_voice.receive(INDEX).observe(this.viewLifecycleOwner) { selectedItem ->
+            voiceDataItem = selectedItem
+        }
+
         if (id > 0) {
             viewModel.receive(id).observe(this.viewLifecycleOwner) { pointbadhabits ->
                 badHabitItem = pointbadhabits
@@ -64,8 +80,17 @@ class AddBadHabitFragment: Fragment() {
         } else {
             binding.saveBtn.setOnClickListener {
                 addBadHabit()
-                var mediaPlayer = MediaPlayer.create(context, R.raw.bad_new)
-                mediaPlayer.start()
+                System.out.println("lalala")
+                //System.out.println(voiceDataItem?.goodPauseURL!!.toUri())
+                if(INDEX < 2){
+                    var mediaPlayer = MediaPlayer.create(context, R.raw.bad_new)
+                    mediaPlayer.start()
+//                    mediaPlayer.release()
+                }else {
+                    var mediaPlayer = MediaPlayer.create(context, voiceDataItem?.goodPauseURL!!.toUri())
+                    mediaPlayer.start()
+//                    mediaPlayer.release()
+                }
             }
         }
     }

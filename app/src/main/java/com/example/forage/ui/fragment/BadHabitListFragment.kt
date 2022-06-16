@@ -5,22 +5,33 @@ import android.content.DialogInterface
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.*
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LiveData
 import androidx.navigation.fragment.findNavController
 import com.example.forage.BaseApplication
+import com.example.forage.MainActivity.Companion.INDEX
 import com.example.forage.R
 import com.example.forage.databinding.FragmentBadHabitListBinding
 import com.example.forage.model.BadHabitItem
+import com.example.forage.model.VoiceDataItem
 import com.example.forage.ui.adapter.BadHabitAdapter
 import com.example.forage.ui.viewmodel.BadHabitViewModel
 import com.example.forage.ui.viewmodel.BadHabitViewModelFactory
+import com.example.forage.ui.viewmodel.VoiceDataViewModel
+import com.example.forage.ui.viewmodel.VoiceDataViewModelFactory
 
 class BadHabitListFragment : Fragment() {
     private val viewModel: BadHabitViewModel by activityViewModels {
         BadHabitViewModelFactory(
             (activity?.application as BaseApplication).badHabitDatabase.badHabitDao()
+        )
+    }
+
+    private val viewModel_voice: VoiceDataViewModel by activityViewModels(){
+        VoiceDataViewModelFactory(
+            (activity?.application as BaseApplication).voiceDataDatabase.voiceDataDao()
         )
     }
 
@@ -66,6 +77,11 @@ class BadHabitListFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        var voiceDataItem : VoiceDataItem?= null
+        viewModel_voice.receive(INDEX).observe(this.viewLifecycleOwner) { selectedItem ->
+            voiceDataItem = selectedItem
+        }
+
         viewModel.allBadHabit.observe(this.viewLifecycleOwner) { habitItem ->
             habitItem.let {
                 adapter.submitList(it)
@@ -92,8 +108,17 @@ class BadHabitListFragment : Fragment() {
             /* On click edit button, show radio button */
             editButton.setOnClickListener {
                 deleteBadHabit()
-                var mediaPlayer = MediaPlayer.create(context, R.raw.bad_delete)
-                mediaPlayer.start()
+                System.out.println("lalala")
+                //System.out.println(voiceDataItem?.goodPauseURL!!.toUri())
+                if(INDEX < 2){
+                    var mediaPlayer = MediaPlayer.create(context, R.raw.bad_delete)
+                    mediaPlayer.start()
+//                    mediaPlayer.release()
+                }else {
+                    var mediaPlayer = MediaPlayer.create(context, voiceDataItem?.goodPauseURL!!.toUri())
+                    mediaPlayer.start()
+//                    mediaPlayer.release()
+                }
             }
 
             /* On click char button, navigate to badOverviewFragment */
