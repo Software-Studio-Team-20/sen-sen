@@ -40,19 +40,55 @@
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 app:layout_constraintStart_toEndOf="@id/radioButton"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@{habit.name}" />
+                android:text="@{habit.name}" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+<!--        <TextView-->
+<!--            android:id="@+id/habit_record"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:textAppearance="?attr/textAppearanceBody2"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:text="@{habit.frequency} ,  ,@{habit.frequency}"-->
+<!--            />-->
+
         <TextView
-            android:id="@+id/habit_record"
+            android:id="@+id/habit_record1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:text="@{habit.frequency}"
             android:textAppearance="?attr/textAppearanceBody2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="@{habit.goal}" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/habit_record2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="15dp"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="/"
+                    />
+
+        <TextView
+            android:id="@+id/habit_record3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginTop="16dp"
+            android:text="@{habit.goal}"
+            android:textAppearance="?attr/textAppearanceBody2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_field"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/view"

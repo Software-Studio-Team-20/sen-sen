@@ -44,15 +44,46 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+<!--        <TextView-->
+<!--            android:id="@+id/habit_record"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:textAppearance="?attr/textAppearanceBody2"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:text="@{habit.goal}" />-->
+
         <TextView
-            android:id="@+id/habit_record"
+            android:id="@+id/habit_record1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
             android:textAppearance="?attr/textAppearanceBody2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@{habit.goal}" />
+            android:text="@{habit.frequency}" />
+        <TextView
+            android:id="@+id/habit_record2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="15dp"
+            android:textAppearance="?attr/textAppearanceBody2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="/" />
+        <TextView
+            android:id="@+id/habit_record3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="0dp"
+            android:textAppearance="?attr/textAppearanceBody2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{habit.goal}" />
 
         <View
             android:id="@+id/view"
