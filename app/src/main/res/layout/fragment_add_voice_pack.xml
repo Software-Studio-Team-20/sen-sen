@@ -60,7 +60,7 @@
             android:foreground="@drawable/ic_round_edit_24" />
 
         <ImageButton
-            android:id="@+id/test_show"
+            android:id="@+id/upload_voice_1"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -69,6 +69,7 @@
             android:foreground="@drawable/ic_round_file_upload_24" />
 
         <ImageButton
+            android:id="@+id/delete_voice_1"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="4dp"
@@ -111,6 +112,7 @@
             android:foreground="@drawable/ic_round_edit_24" />
 
         <ImageButton
+            android:id="@+id/upload_voice_2"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -119,6 +121,7 @@
             android:foreground="@drawable/ic_round_file_upload_24" />
 
         <ImageButton
+            android:id="@+id/delete_voice_2"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="4dp"
@@ -161,6 +164,7 @@
             android:foreground="@drawable/ic_round_edit_24" />
 
         <ImageButton
+            android:id="@+id/upload_voice_3"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -169,6 +173,7 @@
             android:foreground="@drawable/ic_round_file_upload_24" />
 
         <ImageButton
+            android:id="@+id/delete_voice_3"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="4dp"
@@ -211,6 +216,7 @@
             android:foreground="@drawable/ic_round_edit_24" />
 
         <ImageButton
+            android:id="@+id/upload_voice_4"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -219,6 +225,7 @@
             android:foreground="@drawable/ic_round_file_upload_24" />
 
         <ImageButton
+            android:id="@+id/delete_voice_4"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="4dp"
@@ -278,6 +285,7 @@
             android:foreground="@drawable/ic_round_edit_24" />
 
         <ImageButton
+            android:id="@+id/upload_voice_5"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -286,6 +294,7 @@
             android:foreground="@drawable/ic_round_file_upload_24" />
 
         <ImageButton
+            android:id="@+id/delete_voice_5"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="4dp"
@@ -328,6 +337,7 @@
             android:foreground="@drawable/ic_round_edit_24" />
 
         <ImageButton
+            android:id="@+id/upload_voice_6"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -336,6 +346,7 @@
             android:foreground="@drawable/ic_round_file_upload_24" />
 
         <ImageButton
+            android:id="@+id/delete_voice_6"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="4dp"
@@ -378,7 +389,7 @@
             android:foreground="@drawable/ic_round_edit_24" />
 
         <ImageButton
-
+            android:id="@+id/upload_voice_7"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -387,6 +398,7 @@
             android:foreground="@drawable/ic_round_file_upload_24" />
 
         <ImageButton
+            android:id="@+id/delete_voice_7"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="4dp"
@@ -429,6 +441,7 @@
             android:foreground="@drawable/ic_round_edit_24" />
 
         <ImageButton
+            android:id="@+id/upload_voice_8"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -437,6 +450,7 @@
             android:foreground="@drawable/ic_round_file_upload_24" />
 
         <ImageButton
+            android:id="@+id/delete_voice_8"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="4dp"

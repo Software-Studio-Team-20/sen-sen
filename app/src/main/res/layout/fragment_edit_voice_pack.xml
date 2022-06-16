@@ -50,6 +50,7 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
 
         <ImageButton
+            android:id="@+id/select_voice_1"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -99,6 +100,7 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
 
         <ImageButton
+            android:id="@+id/select_voice_2"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -126,15 +128,16 @@
 
     <LinearLayout
         android:id="@+id/good_resume"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="61dp"
+        android:orientation="horizontal"
         android:paddingHorizontal="16dp">
+
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="4dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginRight="4dp"
             android:text="@string/resume"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
 
@@ -142,32 +145,33 @@
             android:id="@+id/good_resume_url"
             android:layout_width="128dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="4dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="4dp"
             android:text="Docs..."
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
 
         <ImageButton
+            android:id="@+id/select_voice_3"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginHorizontal="4dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="4dp"
             android:backgroundTint="@color/white"
             android:foreground="@drawable/ic_round_edit_24" />
 
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginHorizontal="4dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="4dp"
             android:backgroundTint="@color/white"
             android:foreground="@drawable/ic_round_file_upload_24" />
 
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="4dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
             android:backgroundTint="@color/white"
             android:foreground="@drawable/ic_round_delete_24" />
 
@@ -197,6 +201,7 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
 
         <ImageButton
+            android:id="@+id/select_voice_4"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -263,6 +268,7 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
 
         <ImageButton
+            android:id="@+id/select_voice_5"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -312,6 +318,7 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
 
         <ImageButton
+            android:id="@+id/select_voice_6"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -361,6 +368,7 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
 
         <ImageButton
+            android:id="@+id/select_voice_7"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"
@@ -410,6 +418,7 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
 
         <ImageButton
+            android:id="@+id/select_voice_8"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="4dp"

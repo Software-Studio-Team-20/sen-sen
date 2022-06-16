@@ -104,14 +104,14 @@ class AddVoicePackFragment : Fragment() {
         binding.apply {
             /* On click add button, navigate to addHabitFragment */
             selectVoice1.setOnClickListener {
-                System.out.println(url1)
-                System.out.println(url2)
-                System.out.println(url3)
-                System.out.println(url4)
-                System.out.println(url5)
-                System.out.println(url6)
-                System.out.println(url7)
-                System.out.println(url8)
+//                System.out.println(url1)
+//                System.out.println(url2)
+//                System.out.println(url3)
+//                System.out.println(url4)
+//                System.out.println(url5)
+//                System.out.println(url6)
+//                System.out.println(url7)
+//                System.out.println(url8)
 
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
@@ -203,6 +203,137 @@ class AddVoicePackFragment : Fragment() {
             }
             voicePackAddButton.setOnClickListener {
                 viewModel.addVoiceData("voice1", url1, url2, url3, url4, url5, url6, url7, url8)
+            }
+
+            uploadVoice1.setOnClickListener {
+//                System.out.println(url1)
+//                System.out.println(url2)
+//                System.out.println(url3)
+//                System.out.println(url4)
+//                System.out.println(url5)
+//                System.out.println(url6)
+//                System.out.println(url7)
+//                System.out.println(url8)
+
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+//                            System.out.println(ringtones[0].uri)
+                            url1 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+            uploadVoice2.setOnClickListener {
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+//                            System.out.println(ringtones[0].uri)
+                            url2 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+            uploadVoice3.setOnClickListener {
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+//                            System.out.println(ringtones[0].uri)
+                            url3 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+            uploadVoice4.setOnClickListener {
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+//                            System.out.println(ringtones[0].uri)
+                            url4 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+            uploadVoice5.setOnClickListener {
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+//                            System.out.println(ringtones[0].uri)
+                            url5 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+            uploadVoice6.setOnClickListener {
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+//                            System.out.println(ringtones[0].uri)
+                            url6 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+            uploadVoice7.setOnClickListener {
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+//                            System.out.println(ringtones[0].uri)
+                            url7 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+            uploadVoice8.setOnClickListener {
+                RingtonePickerDialog.createEphemeralInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog",
+                    listener = object : UltimateRingtonePicker.RingtonePickerListener {
+                        override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+//                            System.out.println(ringtones[0].uri)
+                            url8 = ringtones[0].uri.toString()
+                        }
+                    }
+                ).show(childFragmentManager, null)
+            }
+
+            deleteVoice1.setOnClickListener {
+                url1=""
+            }
+            deleteVoice2.setOnClickListener {
+                url2=""
+            }
+            deleteVoice3.setOnClickListener {
+                url3=""
+            }
+            deleteVoice4.setOnClickListener {
+                url4=""
+            }
+            deleteVoice5.setOnClickListener {
+                url5=""
+            }
+            deleteVoice6.setOnClickListener {
+                url6=""
+            }
+            deleteVoice7.setOnClickListener {
+                url7=""
+            }
+            deleteVoice8.setOnClickListener {
+                url8=""
             }
         }
     }
