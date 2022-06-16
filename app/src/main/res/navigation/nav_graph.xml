@@ -203,6 +203,9 @@
         <action
             android:id="@+id/action_addVoicePackFragment_to_voiceSettingsListFragment"
             app:destination="@id/voiceSettingsListFragment" />
+        <action
+            android:id="@+id/action_addVoicePackFragment_to_selectVoiceFrgment"
+            app:destination="@id/selectVoiceFrgment" />
     </fragment>
     <fragment
         android:id="@+id/viewHabitFragment"
@@ -251,5 +254,9 @@
         android:name="com.example.forage.ui.fragment.MoreSettingsFragment"
         android:label="fragment_more_settings"
         tools:layout="@layout/fragment_more_settings" />
+    <fragment
+        android:id="@+id/selectVoiceFrgment"
+        android:name="com.example.forage.ui.fragment.SelectVoiceFrgment"
+        android:label="SelectVoiceFrgment" />
 
 </navigation>

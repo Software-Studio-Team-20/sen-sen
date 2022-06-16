@@ -1,9 +1,13 @@
 package com.example.forage.ui.fragment
 
+import android.media.MediaPlayer
+import android.media.RingtoneManager
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.forage.BaseApplication
 import com.example.forage.R
@@ -11,6 +15,28 @@ import com.example.forage.databinding.FragmentAddVoicePackBinding
 import com.example.forage.model.VoiceDataItem
 import com.example.forage.ui.viewmodel.VoiceDataViewModel
 import com.example.forage.ui.viewmodel.VoiceDataViewModelFactory
+import xyz.aprildown.ultimateringtonepicker.RingtonePickerDialog
+import xyz.aprildown.ultimateringtonepicker.UltimateRingtonePicker
+
+val settings = UltimateRingtonePicker.Settings(
+    systemRingtonePicker = UltimateRingtonePicker.SystemRingtonePicker(
+        customSection = UltimateRingtonePicker.SystemRingtonePicker.CustomSection(),
+        defaultSection = UltimateRingtonePicker.SystemRingtonePicker.DefaultSection(),
+        ringtoneTypes = listOf(
+            RingtoneManager.TYPE_RINGTONE,
+            RingtoneManager.TYPE_NOTIFICATION,
+            RingtoneManager.TYPE_ALARM
+        )
+    ),
+    deviceRingtonePicker = UltimateRingtonePicker.DeviceRingtonePicker(
+        deviceRingtoneTypes = listOf(
+            UltimateRingtonePicker.RingtoneCategoryType.All,
+            UltimateRingtonePicker.RingtoneCategoryType.Artist,
+            UltimateRingtonePicker.RingtoneCategoryType.Album,
+            UltimateRingtonePicker.RingtoneCategoryType.Folder
+        )
+    )
+)
 
 class AddVoicePackFragment : Fragment() {
     private var _binding: FragmentAddVoicePackBinding?= null
@@ -63,7 +89,47 @@ class AddVoicePackFragment : Fragment() {
                 addVoiceData()
             }
         }
+        binding.apply {
+            /* On click add button, navigate to addHabitFragment */
+            selectVoice1.setOnClickListener {
+                RingtonePickerDialog.createInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog!"
+                ).show(childFragmentManager, null)
+            }
+            selectVoice2.setOnClickListener {
+                RingtonePickerDialog.createInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog!"
+                ).show(childFragmentManager, null)
+            }
+            selectVoice3.setOnClickListener {
+                RingtonePickerDialog.createInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog!"
+                ).show(childFragmentManager, null)
+            }
+            selectVoice4.setOnClickListener {
+                RingtonePickerDialog.createInstance(
+                    settings = settings,
+                    dialogTitle = "Dialog!"
+                ).show(childFragmentManager, null)
+            }
+        }
     }
+
+
+//    fun selectVoice(){
+//        RingtonePickerDialog.createEphemeralInstance(
+//            settings = settings,
+//            dialogTitle = "Dialog",
+//            listener = object : UltimateRingtonePicker.RingtonePickerListener {
+//                override fun onRingtonePicked(ringtones: List<UltimateRingtonePicker.RingtoneEntry>) {
+//
+//                }
+//            }
+//        ).show(supportFragmentManager, null)
+//    }
 
     private fun addVoiceData() {
         /*if (isValidEntry()) {
