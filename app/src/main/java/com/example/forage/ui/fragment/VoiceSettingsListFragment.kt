@@ -7,6 +7,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.forage.BaseApplication
+import com.example.forage.MainActivity.Companion.INDEX
 import com.example.forage.R
 import com.example.forage.databinding.FragmentHabitListBinding
 import com.example.forage.databinding.FragmentSettingsListBinding
@@ -43,9 +44,10 @@ class VoiceSettingsListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = VoiceDataAdapter { item ->
-            val action = VoiceSettingsListFragmentDirections
-                .actionVoiceSettingsListFragmentToEditVoicePackFragment(item.id)
-            findNavController().navigate(action)
+            //val action = VoiceSettingsListFragmentDirections
+            //    .actionVoiceSettingsListFragmentToEditVoicePackFragment(item.id)
+            INDEX = item.id + 1
+            //findNavController().navigate(action)
         }
 
         viewModel.allVoiceData.observe(this.viewLifecycleOwner){ item ->

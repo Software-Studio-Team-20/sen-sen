@@ -50,7 +50,6 @@ class VoiceDataAdapter(
         holder.itemView.setOnClickListener {
             clickListener(item)
         }
-
         holder.bind(item)
     }
 }
