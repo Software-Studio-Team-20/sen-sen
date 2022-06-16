@@ -1,7 +1,9 @@
 package com.example.forage.ui.fragment
 
+import android.graphics.*
 import android.os.Bundle
 import android.view.*
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LiveData
@@ -93,18 +95,24 @@ class ViewHabitFragment : Fragment() {
                 bindHabitItem(habitItem)
             }
 
+        //drawCurrent((habitItem.frequency.toFloat()/habitItem.goal.toFloat())*360)
+
             binding.addFrequency.setOnClickListener(){
                 if(habitItem.frequency.toInt() < habitItem.goal.toInt()) {
                     var frequencyTemp = habitItem.frequency
                     frequencyTemp = (frequencyTemp.toInt() + 1).toString()
                     changeFrequency(habitItem, frequencyTemp)
+                    //var progressAngleTemp = (frequencyTemp.toFloat()/habitItem.goal.toFloat())*360
+                    //drawCurrent(progressAngleTemp)
                 }
             }
 
             binding.resetFrequency.setOnClickListener(){
                 changeFrequency(habitItem, "0")
+                //drawCurrent(0f)
             }
         //}
+
 
     }
 
@@ -112,6 +120,7 @@ class ViewHabitFragment : Fragment() {
         binding.apply {
             currentFrequency.text = habitItem.frequency
             currentGoal.text = habitItem.goal
+            drawCurrent((habitItem.frequency.toFloat()/habitItem.goal.toFloat())*360)
         }
     }
 
@@ -137,5 +146,29 @@ class ViewHabitFragment : Fragment() {
             note = habitItem.note.toString()
         )
     }
+
+
+
+    fun drawCurrent(progressAngle : Float){
+        var bitmap = Bitmap.createBitmap(200, 200, Bitmap.Config.ARGB_8888);
+        var canvas = Canvas(bitmap);
+        var paint = Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.style = Paint.Style.STROKE
+        var path = Path()
+        var circleSize = RectF()
+
+        circleSize.set(0f,0f,200f,200f)
+        path.addArc(circleSize,0f,progressAngle)
+        canvas.drawPath(path,paint)
+
+        binding.imageView.setImageBitmap(bitmap);//var progress = Path()
+
+        /*
+        paint.setColor(Color.BLACK);
+        canvas.drawCircle(0f,0f, 50f, paint)
+        binding.imageView.setImageBitmap(bitmap);//var progress = Path()
+        */
+    }
+
 
 }
