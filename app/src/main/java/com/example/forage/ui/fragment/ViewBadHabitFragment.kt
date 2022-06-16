@@ -1,5 +1,6 @@
 package com.example.forage.ui.fragment
 
+import android.graphics.*
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -97,11 +98,28 @@ class ViewBadHabitFragment : Fragment() {
             }
         //}
 
+        binding.addFrequency.setOnClickListener(){
+            if(habitItem.frequency.toInt() < habitItem.goal.toInt()) {
+                var frequencyTemp = habitItem.frequency
+                frequencyTemp = (frequencyTemp.toInt() + 1).toString()
+                changeFrequency(habitItem, frequencyTemp)
+                //var progressAngleTemp = (frequencyTemp.toFloat()/habitItem.goal.toFloat())*360
+                //drawCurrent(progressAngleTemp)
+            }
+        }
+
+        binding.resetFrequency.setOnClickListener(){
+            changeFrequency(habitItem, "0")
+            //drawCurrent(0f)
+        }
+
     }
 
     fun bindHabitItem(habitItem: BadHabitItem){
         binding.apply {
-
+            currentFrequency.text = habitItem.frequency
+            currentGoal.text = habitItem.goal
+            drawCurrent((habitItem.frequency.toFloat()/habitItem.goal.toFloat())*360)
         }
     }
 
@@ -114,6 +132,41 @@ class ViewBadHabitFragment : Fragment() {
         val action = ViewBadHabitFragmentDirections
             .actionViewBadHabitFragmentToEditBadHabitFragment(habitItem.id)
         findNavController().navigate(action)
+    }
+
+    fun changeFrequency(habitItem:BadHabitItem, tmp:String){
+        viewModel.updateBadHabit(
+            id = habitItem.id,
+            name = habitItem.name.toString(),
+            goal = habitItem.goal,
+            frequency = tmp,
+            timeRange = habitItem.timeRange,
+            reminder = habitItem.reminderMesseage.toString(),
+            note = habitItem.note.toString()
+        )
+    }
+
+    fun drawCurrent(progressAngle : Float){
+        var bitmap = Bitmap.createBitmap(250, 250, Bitmap.Config.ARGB_8888);
+        var canvas = Canvas(bitmap);
+        var paint = Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.style = Paint.Style.STROKE
+        paint.setStrokeWidth(15f)
+        paint.setColor(getResources().getColor(R.color.blue))
+        var path = Path()
+        var circleSize = RectF()
+
+        circleSize.set(25f,25f,225f,225f)
+        path.addArc(circleSize,0f,progressAngle)
+        canvas.drawPath(path,paint)
+
+        binding.imageView.setImageBitmap(bitmap);//var progress = Path()
+
+        /*
+        paint.setColor(Color.BLACK);
+        canvas.drawCircle(0f,0f, 50f, paint)
+        binding.imageView.setImageBitmap(bitmap);//var progress = Path()
+        */
     }
 
 }

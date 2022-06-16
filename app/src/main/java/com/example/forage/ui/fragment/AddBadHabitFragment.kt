@@ -118,6 +118,8 @@ class AddBadHabitFragment: Fragment() {
     }
 
     private fun isValidEntry() = viewModel.isValidEntry(
-        binding.nameInput.text.toString()
+        binding.nameInput.text.toString(),
+        binding.goalsInput.text.toString(),
+        binding.frequencyInput.text.toString()
     )
 }

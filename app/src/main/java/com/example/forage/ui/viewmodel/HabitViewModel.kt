@@ -70,8 +70,8 @@ class HabitViewModel(private val habitDao: HabitDao) : ViewModel() {
         }
     }
 
-    fun isValidEntry(name: String): Boolean {
-        return name.isNotBlank()
+    fun isValidEntry(name: String,goal:String,frequency:String): Boolean {
+        return name.isNotBlank() && goal.isNotBlank() && frequency.isNotBlank() && (goal.toInt()!=0)
     }
 }
 

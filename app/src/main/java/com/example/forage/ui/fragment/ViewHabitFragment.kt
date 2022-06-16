@@ -150,14 +150,16 @@ class ViewHabitFragment : Fragment() {
 
 
     fun drawCurrent(progressAngle : Float){
-        var bitmap = Bitmap.createBitmap(200, 200, Bitmap.Config.ARGB_8888);
+        var bitmap = Bitmap.createBitmap(250, 250, Bitmap.Config.ARGB_8888);
         var canvas = Canvas(bitmap);
         var paint = Paint(Paint.ANTI_ALIAS_FLAG);
         paint.style = Paint.Style.STROKE
+        paint.setStrokeWidth(15f)
+        paint.setColor(getResources().getColor(R.color.orange))
         var path = Path()
         var circleSize = RectF()
 
-        circleSize.set(0f,0f,200f,200f)
+        circleSize.set(25f,25f,225f,225f)
         path.addArc(circleSize,0f,progressAngle)
         canvas.drawPath(path,paint)
 
