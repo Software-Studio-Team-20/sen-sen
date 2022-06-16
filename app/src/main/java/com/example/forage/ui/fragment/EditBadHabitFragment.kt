@@ -38,7 +38,6 @@ class EditBadHabitFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         _binding = FragmentEditBadHabitBinding.inflate(inflater, container, false)
         return binding.root
     }

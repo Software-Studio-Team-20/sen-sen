@@ -21,7 +21,6 @@ class HabitAdapter(
         fun bind(habitItem: HabitItem) {
             binding.habit = habitItem
             binding.executePendingBindings()
-
         }
     }
 

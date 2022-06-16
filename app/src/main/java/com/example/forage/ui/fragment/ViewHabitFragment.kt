@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LiveData
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -91,13 +92,26 @@ class ViewHabitFragment : Fragment() {
                 habitItem = selectedItem
                 bindHabitItem(habitItem)
             }
+
+            binding.addFrequency.setOnClickListener(){
+                if(habitItem.frequency.toInt() < habitItem.goal.toInt()) {
+                    var frequencyTemp = habitItem.frequency
+                    frequencyTemp = (frequencyTemp.toInt() + 1).toString()
+                    changeFrequency(habitItem, frequencyTemp)
+                }
+            }
+
+            binding.resetFrequency.setOnClickListener(){
+                changeFrequency(habitItem, "0")
+            }
         //}
 
     }
 
     fun bindHabitItem(habitItem: HabitItem){
         binding.apply {
-
+            currentFrequency.text = habitItem.frequency
+            currentGoal.text = habitItem.goal
         }
     }
 
@@ -110,6 +124,18 @@ class ViewHabitFragment : Fragment() {
         val action = ViewHabitFragmentDirections
             .actionViewHabitFragmentToEditHabitFragment(habitItem.id)
         findNavController().navigate(action)
+    }
+
+    fun changeFrequency(habitItem:HabitItem, tmp:String){
+        viewModel.updateHabit(
+            id = habitItem.id,
+            name = habitItem.name.toString(),
+            goal = habitItem.goal,
+            frequency = tmp,
+            timeRange = habitItem.timeRange,
+            reminder = habitItem.reminderMesseage.toString(),
+            note = habitItem.note.toString()
+        )
     }
 
 }

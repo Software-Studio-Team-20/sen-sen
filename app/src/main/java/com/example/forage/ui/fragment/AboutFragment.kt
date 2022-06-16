@@ -1,5 +1,7 @@
 package com.example.forage.ui.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -37,6 +39,20 @@ class AboutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.apply{
+            licenseLink.setOnClickListener {
+                val licensesUrl : Uri = Uri.parse("https://sites.google.com/gapp.nthu.edu.tw/sensen")
+                val intent = Intent(Intent.ACTION_VIEW, licensesUrl)
+                context?.startActivity(intent)
+            }
+
+            aboutLink.setOnClickListener {
+                val aboutUrl : Uri = Uri.parse("https://sites.google.com/gapp.nthu.edu.tw/sensen")
+                val intent = Intent(Intent.ACTION_VIEW, aboutUrl)
+                context?.startActivity(intent)
+            }
+        }
+
 
     }
 }

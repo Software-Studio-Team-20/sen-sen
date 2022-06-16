@@ -87,7 +87,7 @@
     <fragment
         android:id="@+id/addHabitFragment"
         android:name="com.example.forage.ui.fragment.AddHabitFragment"
-        android:label="@string/add_edit"
+        android:label="@string/add_habit_bar"
         tools:layout="@layout/fragment_add_habit" >
         <action
             android:id="@+id/action_addHabitFragment_to_habitListFragment"
@@ -117,11 +117,14 @@
         <action
             android:id="@+id/action_badHabitListFragment_to_editBadHabitFragment"
             app:destination="@id/editBadHabitFragment" />
+        <action
+            android:id="@+id/action_badHabitListFragment_to_viewBadHabitFragment"
+            app:destination="@id/viewBadHabitFragment" />
     </fragment>
     <fragment
         android:id="@+id/addBadHabitFragment"
         android:name="com.example.forage.ui.fragment.AddBadHabitFragment"
-        android:label="@string/add_edit"
+        android:label="@string/add_habit_bar"
         tools:layout="@layout/fragment_add_bad_habit" >
         <action
             android:id="@+id/action_addBadHabitFragment_to_badHabitListFragment"
@@ -194,7 +197,7 @@
     <fragment
         android:id="@+id/addVoicePackFragment"
         android:name="com.example.forage.ui.fragment.AddVoicePackFragment"
-        android:label="fragment_add_voice_pack"
+        android:label="@string/add_voice_pack_bar"
         tools:layout="@layout/fragment_add_voice_pack" >
         <argument
             android:name="id"
@@ -207,7 +210,7 @@
     <fragment
         android:id="@+id/viewHabitFragment"
         android:name="com.example.forage.ui.fragment.ViewHabitFragment"
-        android:label="fragment_view_habit"
+        android:label="@string/view_habit_bar"
         tools:layout="@layout/fragment_view_habit">
         <argument
             android:name="id"
@@ -223,7 +226,7 @@
     <fragment
         android:id="@+id/viewBadHabitFragment"
         android:name="com.example.forage.ui.fragment.ViewBadHabitFragment"
-        android:label="fragment_view_bad_habit"
+        android:label="@string/view_habit_bar"
         tools:layout="@layout/fragment_view_bad_habit" >
         <argument
             android:name="id"
@@ -239,17 +242,17 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.forage.ui.fragment.AboutFragment"
-        android:label="fragment_about"
+        android:label="@string/setting_about"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/FAQAndUserSupportFragment"
         android:name="com.example.forage.ui.fragment.FAQAndUserSupportFragment"
-        android:label="fragment_faq_and_user_support"
+        android:label="@string/setting_faq_and_user_support"
         tools:layout="@layout/fragment_faq_and_user_support" />
     <fragment
         android:id="@+id/moreSettingsFragment"
         android:name="com.example.forage.ui.fragment.MoreSettingsFragment"
-        android:label="fragment_more_settings"
+        android:label="@string/setting_more_setting"
         tools:layout="@layout/fragment_more_settings" />
 
 </navigation>
