@@ -1,4 +1,3 @@
-import android.media.RingtoneManager
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -10,11 +9,8 @@ import com.example.forage.R
 import com.example.forage.databinding.FragmentEditVoicePackBinding
 import com.example.forage.model.VoiceDataItem
 import com.example.forage.ui.fragment.EditVoicePackFragmentArgs
-import com.example.forage.ui.fragment.settings
 import com.example.forage.ui.viewmodel.VoiceDataViewModel
 import com.example.forage.ui.viewmodel.VoiceDataViewModelFactory
-import xyz.aprildown.ultimateringtonepicker.RingtonePickerDialog
-import xyz.aprildown.ultimateringtonepicker.UltimateRingtonePicker
 
 class EditVoicePackFragment : Fragment() {
     private var _binding: FragmentEditVoicePackBinding?= null

@@ -15,26 +15,26 @@ class VoiceDataViewModel (private val voiceDataDao: VoiceDataDao) : ViewModel() 
     fun receive (id : Long) : LiveData<VoiceDataItem> = voiceDataDao.gethabit(id).asLiveData()
 
     fun addVoiceData(
-        name: String,
-        goodStartURL: String,
-        goodPauseURL: String,
-        goodResumeURL: String,
-        goodFinishURL: String,
-        badStartURL: String,
-        badPauseURL: String,
-        badResumeURL: String,
-        badFinishURL: String
+        name: String = "voice 1",
+        goodStartURL : String = "raw/good_new.m4a",
+        goodPauseURL : String = "raw/good_delete.m4a",
+        goodResumeURL: String = "raw/good_new.m4a",
+        goodFinishURL: String = "raw/good_delete.m4a",
+        badStartURL  : String = "raw/bad_new.m4a",
+        badPauseURL  : String = "raw/bad_delete.m4a",
+        badResumeURL : String = "raw/bad_new.m4a",
+        badFinishURL : String = "raw/bad_delete.m4a"
     ){
         val item = VoiceDataItem(
             name = name,
-            goodStartURL = goodStartURL,
-            goodPauseURL = goodPauseURL,
+            goodStartURL  = goodStartURL,
+            goodPauseURL  = goodPauseURL,
             goodResumeURL = goodResumeURL,
             goodFinishURL = goodFinishURL,
-            badStartURL = badStartURL,
-            badPauseURL = badPauseURL,
-            badResumeURL = badResumeURL,
-            badFinishURL = badFinishURL
+            badStartURL   = badStartURL,
+            badPauseURL   = badPauseURL,
+            badResumeURL  = badResumeURL,
+            badFinishURL  = badFinishURL
         )
         viewModelScope.launch {
             voiceDataDao.insert(item)

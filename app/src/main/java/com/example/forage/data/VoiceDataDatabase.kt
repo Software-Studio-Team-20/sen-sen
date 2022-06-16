@@ -23,7 +23,6 @@ abstract class VoiceDataDatabase : RoomDatabase() {
                 INSTANCE = instance
                 return instance
             }
-
         }
     }
 }
