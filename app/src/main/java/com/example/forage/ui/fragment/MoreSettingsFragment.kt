@@ -2,6 +2,7 @@ package com.example.forage.ui.fragment
 
 import android.os.Bundle
 import android.view.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -45,6 +46,36 @@ class MoreSettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.apply {
+            startOpt1.setOnClickListener {
+                startOpt1.visibility = TextView.GONE
+                startOpt2.visibility = TextView.VISIBLE
+            }
 
+            startOpt2.setOnClickListener {
+                startOpt1.visibility = TextView.VISIBLE
+                startOpt2.visibility = TextView.GONE
+            }
+
+            positionOpt1.setOnClickListener {
+                positionOpt1.visibility = TextView.GONE
+                positionOpt2.visibility = TextView.VISIBLE
+            }
+
+            positionOpt2.setOnClickListener {
+                positionOpt1.visibility = TextView.VISIBLE
+                positionOpt2.visibility = TextView.GONE
+            }
+
+            modeOpt1.setOnClickListener {
+                modeOpt1.visibility = TextView.GONE
+                modeOpt2.visibility = TextView.VISIBLE
+            }
+
+            modeOpt2.setOnClickListener {
+                modeOpt1.visibility = TextView.VISIBLE
+                modeOpt2.visibility = TextView.GONE
+            }
+        }
     }
 }

@@ -20,12 +20,15 @@
     <!-- Strings used for app bar -->
     <string name="home_bar">Home</string>
     <string name="edit_habit_bar">Edit Habit</string>
+    <string name="add_habit_bar">Add Habit</string>
     <string name="custom_habit_bar">Custom Habit</string>
+    <string name="view_habit_bar">Habit Name</string>
     <string name="overview_bar">Overview</string>
     <string name="setting_bar">Settings</string>
     <string name="tutorial_bar">Tutorial</string>
     <string name="more_setting_bar">More Settings</string>
     <string name="voice_setting_bar">Voice Settings</string>
+    <string name="add_voice_pack_bar">Add Voice Pack</string>
     <string name="edit_voice_pack_bar">Edit Voice Pack</string>
     <string name="custom_voice_pack_bar">Custom Voice Pack</string>
     <string name="menu_edit">Edit</string>
@@ -45,8 +48,10 @@
     <!-- Strings used for settings list -->
     <string name="setting_language">Language</string>
     <string name="setting_english">English</string>
+    <string name="setting_chinese">Chinese</string>
     <string name="setting_theme">Theme</string>
     <string name="setting_light_mode">Light</string>
+    <string name="setting_dark_mode">Dark</string>
     <string name="setting_voice_setting">Voice Setting</string>
     <string name="setting_more_setting">More Setting</string>
     <string name="setting_tutorial">Tutorial</string>
