@@ -62,7 +62,7 @@ class BadHabitListFragment : Fragment() {
             */
 
             val action = BadHabitListFragmentDirections
-                .actionBadHabitListFragmentToAddBadHabitFragment(habitItem.id)
+                .actionBadHabitListFragmentToViewBadHabitFragment(habitItem.id)
             findNavController().navigate(action)
         }
 

@@ -117,6 +117,9 @@
         <action
             android:id="@+id/action_badHabitListFragment_to_editBadHabitFragment"
             app:destination="@id/editBadHabitFragment" />
+        <action
+            android:id="@+id/action_badHabitListFragment_to_viewBadHabitFragment"
+            app:destination="@id/viewBadHabitFragment" />
     </fragment>
     <fragment
         android:id="@+id/addBadHabitFragment"
