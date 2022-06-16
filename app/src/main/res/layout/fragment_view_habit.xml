@@ -16,27 +16,29 @@
         android:layout_height="match_parent"
         tools:context=".ui.fragment.ViewHabitFragment">
 
-        <Button
+        <ImageButton
             android:id="@+id/reset_frequency"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="80dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="92dp"
             android:layout_marginBottom="180dp"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/viewhabit_reset_icon"
             android:text="Reset"
-            android:backgroundTint="@color/light_orange"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
+        <ImageButton
             android:id="@+id/add_frequency"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="72dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="92dp"
             android:layout_marginBottom="180dp"
+            android:backgroundTint="#00FFB58E"
+            android:src="@drawable/viewhabit_add_con"
             android:text="Add"
-            android:backgroundTint="@color/light_orange"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/progress_background_circle"

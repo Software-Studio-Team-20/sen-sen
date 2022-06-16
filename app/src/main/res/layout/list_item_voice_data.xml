@@ -20,10 +20,11 @@
             android:id="@+id/imageView_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:srcCompat="@drawable/ic_round_done_24"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/Voice_Pack_name"
@@ -43,7 +44,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginRight="48dp"
-            android:backgroundTint="#00FFFFFF"
+            android:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -54,12 +55,12 @@
             android:id="@+id/imageBottom_delete"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:backgroundTint="#00FFFFFF"
+            android:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck"
-            tools:srcCompat="@drawable/ic_round_delete_outline_24"
+            tools:srcCompat="@drawable/ic_round_delete_24"
             app:tint="@color/black" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

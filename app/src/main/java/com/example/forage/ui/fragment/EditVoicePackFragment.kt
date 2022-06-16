@@ -1,5 +1,6 @@
 import android.os.Bundle
 import android.view.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -83,7 +84,23 @@ class EditVoicePackFragment : Fragment() {
 
     private fun bindVoiceData(item: VoiceDataItem) {
         binding.apply {
+            voicePackNameInput.setText(item.name, TextView.BufferType.SPANNABLE)
+            goodStartUrl.text = item.goodStartURL
+            goodPauseUrl.text = item.goodPauseURL
+            goodResumeUrl.text = item.goodResumeURL
+            goodFinishUrl.text = item.goodFinishURL
+            badStartUrl.text = item.badStartURL
+            badPauseUrl.text = item.badPauseURL
+            badResumeUrl.text = item.badResumeURL
+            badFinishUrl.text = item.badFinishURL
 
+            voicePackAddButton.setOnClickListener {
+
+            }
+
+            voicePackCancelButton.setOnClickListener {
+                //findNavController().navigate(R.id.actionEdi)
+            }
         }
     }
 

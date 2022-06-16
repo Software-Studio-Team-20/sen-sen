@@ -35,7 +35,6 @@ class VoiceSettingsListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         _binding = FragmentVoiceSettingsListBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -58,7 +57,9 @@ class VoiceSettingsListFragment : Fragment() {
         binding.apply {
             voiceSettingsRecyclerView.adapter = adapter
             addVoicePackButton.setOnClickListener {
-                findNavController().navigate(R.id.action_voiceSettingsListFragment_to_addVoicePackFragment)
+                val action = VoiceSettingsListFragmentDirections
+                    .actionVoiceSettingsListFragmentToAddVoicePackFragment()
+                findNavController().navigate(action)
             }
         }
 
