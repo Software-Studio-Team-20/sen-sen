@@ -3,6 +3,7 @@ package com.example.forage.ui.fragment
 import android.os.Bundle
 import android.view.*
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -89,6 +90,11 @@ class EditBadHabitFragment : Fragment() {
             val action = EditBadHabitFragmentDirections
                 .actionEditBadHabitFragmentToViewBadHabitFragment(habitItem.id)
             findNavController().navigate(action)
+        }
+        else{
+            val toast = Toast.makeText(context, "need to type name, frequency ,and goals.\nfrequency and goals can only be numbers.", Toast.LENGTH_LONG)
+            toast.setGravity(Gravity.CENTER,0,0)
+            toast.show()
         }
     }
 

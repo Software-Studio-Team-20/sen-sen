@@ -4,6 +4,7 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.*
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -112,6 +113,11 @@ class AddHabitFragment: Fragment() {
                 R.id.action_addHabitFragment_to_habitListFragment
             )
         }
+        else{
+            val toast = Toast.makeText(context, "need to type name, frequency ,and goals.\nfrequency and goals can only be numbers.", Toast.LENGTH_LONG)
+            toast.setGravity(Gravity.CENTER,0,0)
+            toast.show()
+        }
     }
     private fun updateHabit() {
         if (isValidEntry()) {
@@ -127,6 +133,11 @@ class AddHabitFragment: Fragment() {
             findNavController().navigate(
                 R.id.action_addHabitFragment_to_habitListFragment
             )
+        }
+        else{
+            val toast = Toast.makeText(context, "need to type name, frequency ,and goals.\nfrequency and goals can only be numbers.", Toast.LENGTH_LONG)
+            toast.setGravity(Gravity.CENTER,0,0)
+            toast.show()
         }
     }
 
