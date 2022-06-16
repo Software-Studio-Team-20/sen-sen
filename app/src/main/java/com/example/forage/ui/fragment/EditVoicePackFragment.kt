@@ -1,9 +1,10 @@
+package com.example.forage.ui.fragment
+
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.media.RingtoneManager
 import android.os.Bundle
 import android.view.*
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -12,41 +13,11 @@ import com.example.forage.BaseApplication
 import com.example.forage.R
 import com.example.forage.databinding.FragmentEditVoicePackBinding
 import com.example.forage.model.VoiceDataItem
-import com.example.forage.ui.fragment.AddVoicePackFragmentArgs
 import com.example.forage.ui.fragment.EditVoicePackFragmentArgs
 import com.example.forage.ui.viewmodel.VoiceDataViewModel
 import com.example.forage.ui.viewmodel.VoiceDataViewModelFactory
 import xyz.aprildown.ultimateringtonepicker.RingtonePickerDialog
 import xyz.aprildown.ultimateringtonepicker.UltimateRingtonePicker
-
-val settings = UltimateRingtonePicker.Settings(
-    systemRingtonePicker = UltimateRingtonePicker.SystemRingtonePicker(
-        customSection = UltimateRingtonePicker.SystemRingtonePicker.CustomSection(),
-        defaultSection = UltimateRingtonePicker.SystemRingtonePicker.DefaultSection(),
-        ringtoneTypes = listOf(
-            RingtoneManager.TYPE_RINGTONE,
-            RingtoneManager.TYPE_NOTIFICATION,
-            RingtoneManager.TYPE_ALARM
-        )
-    ),
-    deviceRingtonePicker = UltimateRingtonePicker.DeviceRingtonePicker(
-        deviceRingtoneTypes = listOf(
-            UltimateRingtonePicker.RingtoneCategoryType.All,
-            UltimateRingtonePicker.RingtoneCategoryType.Artist,
-            UltimateRingtonePicker.RingtoneCategoryType.Album,
-            UltimateRingtonePicker.RingtoneCategoryType.Folder
-        )
-    )
-)
-
-var url1: String = "res/raw/bad_delete.m4a"
-var url2: String = "res/raw/bad_delete.m4a"
-var url3: String = "res/raw/bad_delete.m4a"
-var url4: String = "res/raw/bad_delete.m4a"
-var url5: String = "res/raw/bad_delete.m4a"
-var url6: String = "res/raw/bad_delete.m4a"
-var url7: String = "res/raw/bad_delete.m4a"
-var url8: String = "res/raw/bad_delete.m4a"
 
 class EditVoicePackFragment : Fragment() {
     private var _binding: FragmentEditVoicePackBinding?= null
@@ -60,6 +31,35 @@ class EditVoicePackFragment : Fragment() {
             (activity?.application as BaseApplication).voiceDataDatabase.voiceDataDao()
         )
     }
+
+    val settings = UltimateRingtonePicker.Settings(
+        systemRingtonePicker = UltimateRingtonePicker.SystemRingtonePicker(
+            customSection = UltimateRingtonePicker.SystemRingtonePicker.CustomSection(),
+            defaultSection = UltimateRingtonePicker.SystemRingtonePicker.DefaultSection(),
+            ringtoneTypes = listOf(
+                RingtoneManager.TYPE_RINGTONE,
+                RingtoneManager.TYPE_NOTIFICATION,
+                RingtoneManager.TYPE_ALARM
+            )
+        ),
+        deviceRingtonePicker = UltimateRingtonePicker.DeviceRingtonePicker(
+            deviceRingtoneTypes = listOf(
+                UltimateRingtonePicker.RingtoneCategoryType.All,
+                UltimateRingtonePicker.RingtoneCategoryType.Artist,
+                UltimateRingtonePicker.RingtoneCategoryType.Album,
+                UltimateRingtonePicker.RingtoneCategoryType.Folder
+            )
+        )
+    )
+
+    var url1: String = "res/raw/bad_delete.m4a"
+    var url2: String = "res/raw/bad_delete.m4a"
+    var url3: String = "res/raw/bad_delete.m4a"
+    var url4: String = "res/raw/bad_delete.m4a"
+    var url5: String = "res/raw/bad_delete.m4a"
+    var url6: String = "res/raw/bad_delete.m4a"
+    var url7: String = "res/raw/bad_delete.m4a"
+    var url8: String = "res/raw/bad_delete.m4a"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -227,7 +227,8 @@ class EditVoicePackFragment : Fragment() {
         if (isValidEntry()) {
             viewModel.updateVoiceData(
                 id, binding.voicePackNameInput.text.toString(),
-                url1, url2, url3, url4, url5, url6, url7, url8)
+                url1, url2, url3, url4, url5, url6, url7, url8
+            )
             findNavController().navigate(
                 R.id.action_editVoicePackFragment_to_voiceSettingsListFragment
             )

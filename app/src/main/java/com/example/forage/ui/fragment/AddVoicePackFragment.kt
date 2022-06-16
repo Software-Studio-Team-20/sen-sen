@@ -104,14 +104,14 @@ class AddVoicePackFragment : Fragment() {
         binding.apply {
             /* On click add button, navigate to addHabitFragment */
             selectVoice1.setOnClickListener {
-//                System.out.println(url1)
-//                System.out.println(url2)
-//                System.out.println(url3)
-//                System.out.println(url4)
-//                System.out.println(url5)
-//                System.out.println(url6)
-//                System.out.println(url7)
-//                System.out.println(url8)
+//                System.out.println(com.example.forage.ui.fragment.getUrl1)
+//                System.out.println(com.example.forage.ui.fragment.getUrl2)
+//                System.out.println(com.example.forage.ui.fragment.getUrl3)
+//                System.out.println(com.example.forage.ui.fragment.getUrl4)
+//                System.out.println(com.example.forage.ui.fragment.getUrl5)
+//                System.out.println(com.example.forage.ui.fragment.getUrl6)
+//                System.out.println(com.example.forage.ui.fragment.getUrl7)
+//                System.out.println(com.example.forage.ui.fragment.getUrl8)
 
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
@@ -206,14 +206,14 @@ class AddVoicePackFragment : Fragment() {
             }
 
             uploadVoice1.setOnClickListener {
-//                System.out.println(url1)
-//                System.out.println(url2)
-//                System.out.println(url3)
-//                System.out.println(url4)
-//                System.out.println(url5)
-//                System.out.println(url6)
-//                System.out.println(url7)
-//                System.out.println(url8)
+//                System.out.println(com.example.forage.ui.fragment.getUrl1)
+//                System.out.println(com.example.forage.ui.fragment.getUrl2)
+//                System.out.println(com.example.forage.ui.fragment.getUrl3)
+//                System.out.println(com.example.forage.ui.fragment.getUrl4)
+//                System.out.println(com.example.forage.ui.fragment.getUrl5)
+//                System.out.println(com.example.forage.ui.fragment.getUrl6)
+//                System.out.println(com.example.forage.ui.fragment.getUrl7)
+//                System.out.println(com.example.forage.ui.fragment.getUrl8)
 
                 RingtonePickerDialog.createEphemeralInstance(
                     settings = settings,
