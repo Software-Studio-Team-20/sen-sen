@@ -21,22 +21,32 @@
             android:layout_marginEnd="56dp"
             android:gravity="center_vertical"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            android:text="@string/setting_language"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="@string/setting_language" />
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
+            android:id="@+id/language_opt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-            tools:text="@string/setting_english"
+            android:text="@string/setting_english"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/language_label">
-
-        </TextView>
+            app:layout_constraintStart_toEndOf="@id/language_label"/>
+        <TextView
+            android:id="@+id/language_opt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:text="@string/setting_chinese"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/language_label"
+            android:visibility="gone"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,22 +62,34 @@
             android:layout_marginEnd="56dp"
             android:gravity="center_vertical"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            android:text="@string/setting_theme"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="@string/setting_theme" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
+            android:id="@+id/theme_opt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-            tools:text="@string/setting_light_mode"
+            android:text="@string/setting_light_mode"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/theme_label">
+            app:layout_constraintStart_toEndOf="@id/theme_label"/>
 
-        </TextView>
+        <TextView
+            android:id="@+id/theme_opt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:text="@string/setting_dark_mode"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/theme_label"
+            android:visibility="gone"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View

@@ -15,28 +15,40 @@
         android:paddingVertical="16dp">
 
         <TextView
-            android:id="@+id/language_label"
+            android:id="@+id/start_label"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginEnd="56dp"
             android:gravity="center_vertical"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            android:text="@string/start_of_week"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="@string/setting_language" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
+            android:id="@+id/start_opt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-            tools:text="@string/monday"
+            android:text="@string/monday"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/language_label">
+            app:layout_constraintStart_toEndOf="@id/start_label"/>
 
-        </TextView>
+        <TextView
+            android:id="@+id/start_opt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:text="@string/sunday"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/start_label"
+            android:visibility="gone"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,28 +58,40 @@
         android:paddingVertical="16dp">
 
         <TextView
-            android:id="@+id/theme_label"
+            android:id="@+id/position_label"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginEnd="56dp"
             android:gravity="center_vertical"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            android:text="@string/done_habit_position"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="@string/setting_theme" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
+            android:id="@+id/position_opt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-            tools:text="@string/bottom"
+            android:text="@string/bottom"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/theme_label">
+            app:layout_constraintStart_toEndOf="@id/position_label" />
 
-        </TextView>
+        <TextView
+            android:id="@+id/position_opt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:text="@string/keep"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/position_label"
+            android:visibility="gone"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -83,21 +107,31 @@
             android:layout_marginEnd="56dp"
             android:gravity="center_vertical"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            android:text="@string/night_owl_mode"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="@string/night_owl_mode" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
+            android:id="@+id/mode_opt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-            tools:text="@string/mode_on"
+            android:text="@string/mode_on"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/mode_label">
-
-        </TextView>
+            app:layout_constraintStart_toEndOf="@id/mode_label"/>
+        <TextView
+            android:id="@+id/mode_opt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:text="@string/mode_off"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mode_label"
+            android:visibility="gone"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
