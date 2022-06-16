@@ -38,6 +38,15 @@
         <action
             android:id="@+id/action_settingsListFragment_self"
             app:destination="@id/settingsListFragment" />
+        <action
+            android:id="@+id/action_settingsListFragment_to_moreSettingsFragment"
+            app:destination="@id/moreSettingsFragment" />
+        <action
+            android:id="@+id/action_settingsListFragment_to_FAQAndUserSupportFragment"
+            app:destination="@id/FAQAndUserSupportFragment" />
+        <action
+            android:id="@+id/action_settingsListFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/voiceSettingsListFragment"
@@ -227,5 +236,20 @@
             android:id="@+id/action_viewBadHabitFragment_to_badHabitListFragment"
             app:destination="@id/badHabitListFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.forage.ui.fragment.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/FAQAndUserSupportFragment"
+        android:name="com.example.forage.ui.fragment.FAQAndUserSupportFragment"
+        android:label="fragment_faq_and_user_support"
+        tools:layout="@layout/fragment_faq_and_user_support" />
+    <fragment
+        android:id="@+id/moreSettingsFragment"
+        android:name="com.example.forage.ui.fragment.MoreSettingsFragment"
+        android:label="fragment_more_settings"
+        tools:layout="@layout/fragment_more_settings" />
 
 </navigation>

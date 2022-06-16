@@ -49,9 +49,10 @@ class SettingsListFragment : Fragment() {
         val adapter = SettingsAdapter { item ->
             val action = when(item.nameId) {
                 R.string.setting_voice_setting -> SettingsListFragmentDirections.actionSettingsListFragmentToVoiceSettingsListFragment()
-                //R.string.setting_more_setting ->
+                R.string.setting_more_setting -> SettingsListFragmentDirections.actionSettingsListFragmentToMoreSettingsFragment()
                 R.string.setting_tutorial -> SettingsListFragmentDirections.actionSettingsListFragmentToTutorialFragment()
-                //R.string.setting_
+                R.string.setting_about -> SettingsListFragmentDirections.actionSettingsListFragmentToAboutFragment()
+                R.string.setting_faq_and_user_support -> SettingsListFragmentDirections.actionSettingsListFragmentToFAQAndUserSupportFragment()
                 else -> SettingsListFragmentDirections.actionSettingsListFragmentSelf()
             }
             findNavController().navigate(action)

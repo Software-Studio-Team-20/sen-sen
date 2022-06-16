@@ -44,13 +44,37 @@
 
     <!-- Strings used for settings list -->
     <string name="setting_language">Language</string>
+    <string name="setting_english">English</string>
     <string name="setting_theme">Theme</string>
+    <string name="setting_light_mode">Light</string>
     <string name="setting_voice_setting">Voice Setting</string>
     <string name="setting_more_setting">More Setting</string>
     <string name="setting_tutorial">Tutorial</string>
     <string name="setting_faq_and_user_support">FAQ &amp; User Support</string>
     <string name="setting_rate_and_share">Rate &amp; Share</string>
     <string name="setting_about">About</string>
+
+    <string name="start_of_week">Start of Week</string>
+    <string name="monday">Monday</string>
+    <string name="sunday">Sunday</string>
+    <string name="done_habit_position">Done Habit Position</string>
+    <string name="bottom">Bottom</string>
+    <string name="keep">Keep</string>
+    <string name="night_owl_mode">Night Owl Mode</string>
+    <string name="mode_on">On</string>
+    <string name="mode_off">Off</string>
+
+    <string name="question_1">Q1. Where do I add new habit?</string>
+    <string name="question_2">Q2. How do I track my habits?</string>
+    <string name="question_3">Q3. How do I check my habit?</string>
+    <string name="question_4">Q4. Where to record my positive or negative habit?</string>
+    <string name="more_help">Need more help?</string>
+
+    <string name="version">Version</string>
+    <string name="version_id">1.0.0</string>
+    <string name="open_source_licenses">Open source licenses</string>
+    <string name="about_sen_sen">About Sen Sen</string>
+    <string name="link">Links</string>
 
     <!-- Description for settings list -->
     <string name="setting_voice_setting_description">description</string>
